@@ -119,7 +119,7 @@ export const Navbar: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-slate-400 font-medium">
-                  Goa Engineering College (GEC)
+                  Padre Conceicao College of Engineering (PCCE)
                 </p>
               </div>
             </Link>
@@ -167,7 +167,7 @@ export const Navbar: React.FC = () => {
             {/* College Badge */}
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs font-medium text-slate-300">
               <Building2 className="w-3.5 h-3.5 text-blue-400" />
-              <span className="text-white text-xs font-semibold">GEC Campus</span>
+              <span className="text-white text-xs font-semibold">PCCE Campus</span>
             </div>
 
             {/* Logged in User Profile Badge */}

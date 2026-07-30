@@ -47,18 +47,18 @@ export const LoginPage: React.FC = () => {
       setRollNo('2024CS001');
       setClassName('SE-CS');
       setDepartment('Computer Science');
-      setEmail('student@gec.ac.in');
+      setEmail('student@pcce.ac.in');
       setPassword('pass123');
     } else if (newRole === 'TEACHER') {
       setName('Dr. Rajesh Kulkarni');
       setDepartment('Campus IT');
       setTeacherId('FAC-101');
-      setEmail('teacher@gec.ac.in');
+      setEmail('teacher@pcce.ac.in');
       setPassword('pass123');
     } else if (newRole === 'ADMIN') {
       setName('Prof. Anita Desai');
       setAdminId('ADM-001');
-      setEmail('admin@gec.ac.in');
+      setEmail('admin@pcce.ac.in');
       setPassword('pass123');
     }
   };
@@ -122,7 +122,7 @@ export const LoginPage: React.FC = () => {
             user_id: `${role.toLowerCase()}-demo`,
             role: role,
             name: name || (role === 'STUDENT' ? 'Rahul Sharma' : role === 'TEACHER' ? 'Dr. Rajesh Kulkarni' : 'Prof. Anita Desai'),
-            email: email || `${role.toLowerCase()}@gec.ac.in`,
+            email: email || `${role.toLowerCase()}@pcce.ac.in`,
             department: department,
             roll_no: role === 'STUDENT' ? rollNo : undefined,
             teacher_id: role === 'TEACHER' ? teacherId : undefined,
@@ -134,10 +134,10 @@ export const LoginPage: React.FC = () => {
         }
       }
 
-      // Save user session and credentials in localStorage (single college GEC)
+      // Save user session and credentials in localStorage (single college PCCE)
       localStorage.setItem('campsupport_user', JSON.stringify(userData));
       localStorage.setItem('campsupport_role', userData.role);
-      localStorage.setItem('campsupport_college', 'GEC');
+      localStorage.setItem('campsupport_college', 'PCCE');
       window.dispatchEvent(new Event('role_college_changed'));
 
       // Navigate to Home Page (AI Chatbot)
@@ -163,7 +163,7 @@ export const LoginPage: React.FC = () => {
             CampSupport <span className="text-gradient">AI</span>
           </span>
           <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold uppercase">
-            Goa Eng. College (GEC)
+            Padre Conceicao College of Eng. (PCCE)
           </span>
         </div>
         <p className="text-xs text-slate-400 max-w-md mx-auto">

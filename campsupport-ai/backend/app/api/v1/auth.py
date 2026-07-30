@@ -14,37 +14,37 @@ router = APIRouter(tags=["Multi-Role Authentication & Dedicated Credentials Data
 
 # 3 SEPARATE CREDENTIALS DATABASES / COLLECTIONS
 _STUDENTS_DB: Dict[str, Dict[str, Any]] = {
-    "student@gec.ac.in": {
+    "student@pcce.ac.in": {
         "user_id": "stud-1001",
         "role": "STUDENT",
         "name": "Rahul Sharma",
         "roll_no": "2024CS001",
         "class_name": "SE-CS",
         "department": "Computer Science",
-        "college_email": "student@gec.ac.in",
+        "college_email": "student@pcce.ac.in",
         "password": "pass123",
     }
 }
 
 _TEACHERS_DB: Dict[str, Dict[str, Any]] = {
-    "teacher@gec.ac.in": {
+    "teacher@pcce.ac.in": {
         "user_id": "fac-101",
         "role": "TEACHER",
         "name": "Dr. Rajesh Kulkarni",
         "department": "Campus IT",
         "teacher_id": "FAC-101",
-        "college_email": "teacher@gec.ac.in",
+        "college_email": "teacher@pcce.ac.in",
         "password": "pass123",
     }
 }
 
 _ADMINS_DB: Dict[str, Dict[str, Any]] = {
-    "admin@gec.ac.in": {
+    "admin@pcce.ac.in": {
         "user_id": "adm-001",
         "role": "ADMIN",
         "name": "Prof. Anita Desai",
         "admin_id": "ADM-001",
-        "email": "admin@gec.ac.in",
+        "email": "admin@pcce.ac.in",
         "password": "pass123",
     }
 }

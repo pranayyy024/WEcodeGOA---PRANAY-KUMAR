@@ -34,7 +34,7 @@ const INITIAL_DOCS: PolicyDocument[] = [
   {
     id: 'doc-1',
     name: 'wifi_email_sop.txt',
-    collegeId: 'GEC',
+    collegeId: 'PCCE',
     department: 'Campus IT',
     size: '1.4 KB',
     chunks: 12,
@@ -44,7 +44,7 @@ const INITIAL_DOCS: PolicyDocument[] = [
   {
     id: 'doc-2',
     name: 'academic_calendar_2026.txt',
-    collegeId: 'GEC',
+    collegeId: 'PCCE',
     department: 'Academic Registrar',
     size: '2.1 KB',
     chunks: 18,
@@ -54,7 +54,7 @@ const INITIAL_DOCS: PolicyDocument[] = [
   {
     id: 'doc-3',
     name: 'hostel_policy.txt',
-    collegeId: 'GEC',
+    collegeId: 'PCCE',
     department: 'Hostel Admin',
     size: '1.8 KB',
     chunks: 14,
@@ -70,7 +70,7 @@ interface AdminDashboardProps {
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   role = 'TEACHER',
-  collegeId = 'GEC',
+  collegeId = 'PCCE',
 }) => {
   const [docs, setDocs] = useState<PolicyDocument[]>(INITIAL_DOCS);
   const [searchFilter, setSearchFilter] = useState('');
