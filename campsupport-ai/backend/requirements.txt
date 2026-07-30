@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pydantic
+langgraph
+llama-index
+psycopg2-binary
+pymongo
