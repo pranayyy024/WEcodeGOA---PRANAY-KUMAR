@@ -2,21 +2,58 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Bot, Ticket, ShieldCheck, Database, Sliders, CalendarCheck, Building2, UserCheck, GraduationCap, Lock } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import {
+  Bot,
+  Ticket,
+  Sliders,
+  CalendarCheck,
+  Building2,
+  UserCheck,
+  GraduationCap,
+  Lock,
+  LogOut,
+  User,
+  ShieldAlert,
+} from 'lucide-react';
 import { Staff2FAModal } from './Staff2FAModal';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
-  const [role, setRole] = useState<'STUDENT' | 'TEACHER'>('STUDENT');
+  const router = useRouter();
+  const [role, setRole] = useState<'STUDENT' | 'TEACHER' | 'ADMIN'>('STUDENT');
   const [college, setCollege] = useState<'GEC' | 'BITS_PILANI' | 'IIT_BOMBAY'>('GEC');
   const [show2FA, setShow2FA] = useState(false);
+  const [userProfile, setUserProfile] = useState<any>(null);
 
   useEffect(() => {
-    const savedRole = localStorage.getItem('campsupport_role') as 'STUDENT' | 'TEACHER';
-    const savedCollege = localStorage.getItem('campsupport_college') as 'GEC' | 'BITS_PILANI' | 'IIT_BOMBAY';
-    if (savedRole) setRole(savedRole);
-    if (savedCollege) setCollege(savedCollege);
+    const loadSession = () => {
+      const savedRole = localStorage.getItem('campsupport_role') as any;
+      const savedCollege = localStorage.getItem('campsupport_college') as any;
+      const savedUser = localStorage.getItem('campsupport_user');
+
+      if (savedRole) setRole(savedRole);
+      if (savedCollege) setCollege(savedCollege);
+      if (savedUser) {
+        try {
+          setUserProfile(JSON.parse(savedUser));
+        } catch (e) {
+          setUserProfile(null);
+        }
+      } else {
+        setUserProfile(null);
+      }
+    };
+
+    loadSession();
+
+    window.addEventListener('storage', loadSession);
+    window.addEventListener('role_college_changed', loadSession);
+
+    return () => {
+      window.removeEventListener('storage', loadSession);
+      window.removeEventListener('role_college_changed', loadSession);
+    };
   }, []);
 
   const handleToggleRoleClick = () => {
@@ -44,10 +81,23 @@ export const Navbar: React.FC = () => {
     window.dispatchEvent(new Event('role_college_changed'));
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('campsupport_user');
+    localStorage.removeItem('campsupport_role');
+    setUserProfile(null);
+    setRole('STUDENT');
+    router.push('/login');
+  };
+
   const isChat = pathname === '/';
   const isTickets = pathname?.startsWith('/tickets');
   const isAttendance = pathname?.startsWith('/attendance');
   const isAdmin = pathname?.startsWith('/admin');
+  const isLoginPage = pathname === '/login';
+
+  if (isLoginPage) {
+    return null; // Hide main navbar on Login Landing Page
+  }
 
   return (
     <>
@@ -65,7 +115,7 @@ export const Navbar: React.FC = () => {
                     CampSupport <span className="text-gradient">AI</span>
                   </span>
                   <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold tracking-wide uppercase">
-                    Multi-College
+                    Multi-Role Auth
                   </span>
                 </div>
                 <p className="text-xs text-slate-400 font-medium">
@@ -123,8 +173,8 @@ export const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Tenant Switcher & Role Bar */}
-          <div className="flex items-center gap-3">
+          {/* User Profile & Tenant Switcher */}
+          <div className="flex items-center gap-2.5 flex-wrap justify-center">
             {/* College Dropdown */}
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs font-medium text-slate-300">
               <Building2 className="w-3.5 h-3.5 text-blue-400" />
@@ -139,27 +189,55 @@ export const Navbar: React.FC = () => {
               </select>
             </div>
 
+            {/* Logged in User Profile Badge */}
+            {userProfile && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-xs">
+                {userProfile.role === 'TEACHER' ? (
+                  <UserCheck className="w-3.5 h-3.5 text-purple-400" />
+                ) : userProfile.role === 'ADMIN' ? (
+                  <ShieldAlert className="w-3.5 h-3.5 text-blue-400" />
+                ) : (
+                  <User className="w-3.5 h-3.5 text-emerald-400" />
+                )}
+                <span className="text-white font-semibold truncate max-w-[120px]">
+                  {userProfile.name}
+                </span>
+                <span className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] font-bold text-slate-300">
+                  {userProfile.role}
+                </span>
+              </div>
+            )}
+
             {/* Role Switch Button with 2FA Protection */}
             <button
               onClick={handleToggleRoleClick}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl border text-xs font-bold transition-all ${
-                role === 'TEACHER'
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${
+                role === 'TEACHER' || role === 'ADMIN'
                   ? 'bg-purple-600/20 text-purple-300 border-purple-500/40 hover:bg-purple-600/30 shadow-glow-blue'
                   : 'bg-emerald-600/20 text-emerald-300 border-emerald-500/40 hover:bg-emerald-600/30'
               }`}
               title="Students require 2FA verification to access Staff Mode"
             >
-              {role === 'TEACHER' ? (
+              {role === 'TEACHER' || role === 'ADMIN' ? (
                 <>
                   <UserCheck className="w-3.5 h-3.5 text-purple-400" />
-                  <span>👨‍🏫 Staff Mode (Unrestricted)</span>
+                  <span>👨‍🏫 Staff Edit Mode</span>
                 </>
               ) : (
                 <>
                   <Lock className="w-3.5 h-3.5 text-amber-400" />
-                  <span>🎓 Student View (2FA Protected)</span>
+                  <span>🎓 Student Mode</span>
                 </>
               )}
+            </button>
+
+            {/* Logout Button */}
+            <button
+              onClick={handleLogout}
+              className="p-2 rounded-xl bg-slate-900/80 hover:bg-rose-950/50 border border-white/10 hover:border-rose-500/40 text-slate-400 hover:text-rose-300 transition-all"
+              title="Log Out of Campus Portal"
+            >
+              <LogOut className="w-4 h-4" />
             </button>
           </div>
         </div>
