@@ -16,45 +16,55 @@ import {
   IdCard,
   ArrowRight,
   Sparkles,
-  CheckCircle2,
   AlertCircle,
 } from 'lucide-react';
 
 type AuthRole = 'STUDENT' | 'TEACHER' | 'ADMIN';
-type AuthMode = 'LOGIN' | 'SIGNUP';
 
 export const LoginPage: React.FC = () => {
   const router = useRouter();
   const [role, setRole] = useState<AuthRole>('STUDENT');
-  const [mode, setMode] = useState<AuthMode>('LOGIN');
 
-  // Form inputs
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // Form inputs for Student (6 fields), Teacher (5 fields), Admin (4 fields)
+  const [name, setName] = useState('Rahul Sharma');
   const [rollNo, setRollNo] = useState('2024CS001');
   const [className, setClassName] = useState('SE-CS');
   const [department, setDepartment] = useState('Computer Science');
   const [teacherId, setTeacherId] = useState('FAC-101');
   const [adminId, setAdminId] = useState('ADM-001');
+  const [email, setEmail] = useState('student@gec.ac.in');
+  const [password, setPassword] = useState('pass123');
 
   // UI state
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleDemoFill = (targetRole: AuthRole) => {
-    setRole(targetRole);
-    setMode('LOGIN');
-    if (targetRole === 'STUDENT') {
+  const handleRoleChange = (newRole: AuthRole) => {
+    setRole(newRole);
+    setError(null);
+    if (newRole === 'STUDENT') {
+      setName('Rahul Sharma');
+      setRollNo('2024CS001');
+      setClassName('SE-CS');
+      setDepartment('Computer Science');
       setEmail('student@gec.ac.in');
       setPassword('pass123');
-    } else if (targetRole === 'TEACHER') {
+    } else if (newRole === 'TEACHER') {
+      setName('Dr. Rajesh Kulkarni');
+      setDepartment('Campus IT');
+      setTeacherId('FAC-101');
       setEmail('teacher@gec.ac.in');
       setPassword('pass123');
-    } else {
+    } else if (newRole === 'ADMIN') {
+      setName('Prof. Anita Desai');
+      setAdminId('ADM-001');
       setEmail('admin@gec.ac.in');
       setPassword('pass123');
     }
+  };
+
+  const handleDemoFill = (targetRole: AuthRole) => {
+    handleRoleChange(targetRole);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,45 +73,51 @@ export const LoginPage: React.FC = () => {
     setLoading(true);
 
     try {
-      // Build credentials object based on role
-      const endpoint = mode === 'LOGIN' ? '/api/v1/auth/login' : `/api/v1/auth/signup/${role.toLowerCase()}`;
-      const payload: any = { role, email, password };
+      const payload: any = { role, email, password, name };
 
-      if (mode === 'SIGNUP') {
-        payload.name = name;
-        if (role === 'STUDENT') {
-          payload.roll_no = rollNo;
-          payload.class_name = className;
-          payload.department = department;
-          payload.college_email = email;
-        } else if (role === 'TEACHER') {
-          payload.teacher_id = teacherId;
-          payload.department = department;
-          payload.college_email = email;
-        } else if (role === 'ADMIN') {
-          payload.admin_id = adminId;
-          payload.email = email;
-        }
+      if (role === 'STUDENT') {
+        payload.roll_no = rollNo;
+        payload.class_name = className;
+        payload.department = department;
+        payload.college_email = email;
+      } else if (role === 'TEACHER') {
+        payload.teacher_id = teacherId;
+        payload.department = department;
+        payload.college_email = email;
+      } else if (role === 'ADMIN') {
+        payload.admin_id = adminId;
+        payload.email = email;
       }
 
       let userData: any = null;
 
       try {
-        const res = await fetch(`http://localhost:8000${endpoint}`, {
+        // Try authenticating/signing up with backend server
+        const res = await fetch(`http://localhost:8000/api/v1/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ role, email, password }),
         });
 
         if (res.ok) {
           userData = await res.json();
         } else {
-          const errData = await res.json();
-          throw new Error(errData.detail || 'Authentication failed against database.');
+          // If not in DB yet, try signup endpoint
+          const resSignup = await fetch(`http://localhost:8000/api/v1/auth/signup/${role.toLowerCase()}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (resSignup.ok) {
+            userData = await resSignup.json();
+          } else {
+            const errData = await resSignup.json();
+            throw new Error(errData.detail || 'Authentication failed.');
+          }
         }
       } catch (apiErr: any) {
         // Fallback to offline demo auth if backend server isn't running yet
-        if (apiErr.message.includes('Failed to fetch') || apiErr.message.includes('NetworkError')) {
+        if (apiErr.message?.includes('Failed to fetch') || apiErr.message?.includes('NetworkError')) {
           userData = {
             user_id: `${role.toLowerCase()}-demo`,
             role: role,
@@ -118,7 +134,7 @@ export const LoginPage: React.FC = () => {
         }
       }
 
-      // Save user session and credentials in localStorage
+      // Save user session and credentials in localStorage (single college GEC)
       localStorage.setItem('campsupport_user', JSON.stringify(userData));
       localStorage.setItem('campsupport_role', userData.role);
       localStorage.setItem('campsupport_college', 'GEC');
@@ -147,11 +163,11 @@ export const LoginPage: React.FC = () => {
             CampSupport <span className="text-gradient">AI</span>
           </span>
           <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold uppercase">
-            Phase 10 Portal
+            Goa Eng. College (GEC)
           </span>
         </div>
         <p className="text-xs text-slate-400 max-w-md mx-auto">
-          Dedicated Multi-Role Authentication. Log in or create an account to access the Campus AI Chatbot and tenant records.
+          Single-Campus Role Authentication. Enter your verified credentials to access the AI Chatbot and Helpdesk.
         </p>
       </div>
 
@@ -161,7 +177,7 @@ export const LoginPage: React.FC = () => {
         <div className="grid grid-cols-3 gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-white/5">
           <button
             type="button"
-            onClick={() => setRole('STUDENT')}
+            onClick={() => handleRoleChange('STUDENT')}
             className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
               role === 'STUDENT'
                 ? 'bg-emerald-600 text-white shadow-glow-emerald'
@@ -173,7 +189,7 @@ export const LoginPage: React.FC = () => {
           </button>
           <button
             type="button"
-            onClick={() => setRole('TEACHER')}
+            onClick={() => handleRoleChange('TEACHER')}
             className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
               role === 'TEACHER'
                 ? 'bg-purple-600 text-white shadow-glow-blue'
@@ -185,7 +201,7 @@ export const LoginPage: React.FC = () => {
           </button>
           <button
             type="button"
-            onClick={() => setRole('ADMIN')}
+            onClick={() => handleRoleChange('ADMIN')}
             className={`flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold transition-all ${
               role === 'ADMIN'
                 ? 'bg-blue-600 text-white shadow-glow-blue'
@@ -197,152 +213,155 @@ export const LoginPage: React.FC = () => {
           </button>
         </div>
 
-        {/* Mode Switcher (Sign In vs Sign Up) */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <div>
-            <h1 className="text-xl font-bold text-white tracking-tight">
-              {mode === 'LOGIN' ? `Sign In to ${role} Portal` : `Create ${role} Account`}
-            </h1>
-            <p className="text-xs text-slate-400 mt-0.5">
-              {mode === 'LOGIN'
-                ? `Enter your ${role.toLowerCase()} credentials to access your dedicated database.`
-                : `Register new credentials in the dedicated ${role.toLowerCase()}s collection.`}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              setMode(mode === 'LOGIN' ? 'SIGNUP' : 'LOGIN');
-              setError(null);
-            }}
-            className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 underline underline-offset-4"
-          >
-            {mode === 'LOGIN' ? 'Need an account? Sign Up' : 'Have an account? Sign In'}
-          </button>
+        {/* Portal Title */}
+        <div className="border-b border-white/10 pb-3">
+          <h1 className="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+            <span>{role} Credentials Database</span>
+            <span className="px-2 py-0.5 rounded bg-white/10 text-[10px] text-slate-300 font-mono">
+              {role === 'STUDENT' ? '6 Required Fields' : role === 'TEACHER' ? '5 Required Fields' : '4 Required Fields'}
+            </span>
+          </h1>
+          <p className="text-xs text-slate-400 mt-0.5">
+            {role === 'STUDENT'
+              ? 'Students Database: enter your name, roll no, class, department, college email, and password.'
+              : role === 'TEACHER'
+              ? 'Teachers Database: enter your name, department, teacher_id, college email, and password.'
+              : 'Admins Database: enter your name, admin_id, email, and password.'}
+          </p>
         </div>
 
-        {/* Auth Form */}
+        {/* Auth Form with ALL Requested Fields Visible */}
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
-          {/* SIGN UP ONLY FIELDS */}
-          {mode === 'SIGNUP' && (
+          {/* 1. NAME (Common to Student, Teacher, Admin) */}
+          <div>
+            <label className="block text-slate-300 font-medium mb-1.5">
+              {role === 'STUDENT' ? '1. name' : role === 'TEACHER' ? '1. Name' : '1. name'}
+            </label>
+            <div className="relative">
+              <User className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full Name"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
+                required
+              />
+            </div>
+          </div>
+
+          {/* STUDENT SPECIFIC FIELDS (2. roll no., 3. class, 4. department) */}
+          {role === 'STUDENT' && (
             <>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-slate-300 font-medium mb-1.5">2. roll no.</label>
+                  <div className="relative">
+                    <IdCard className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
+                    <input
+                      type="text"
+                      value={rollNo}
+                      onChange={(e) => setRollNo(e.target.value)}
+                      placeholder="2024CS001"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-slate-300 font-medium mb-1.5">3. class</label>
+                  <div className="relative">
+                    <BookOpen className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
+                    <input
+                      type="text"
+                      value={className}
+                      onChange={(e) => setClassName(e.target.value)}
+                      placeholder="SE-CS"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div>
-                <label className="block text-slate-300 font-medium mb-1.5">1. Full Name</label>
+                <label className="block text-slate-300 font-medium mb-1.5">4. department</label>
                 <div className="relative">
-                  <User className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
+                  <Building2 className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
                   <input
                     type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="e.g. Rahul Sharma"
+                    value={department}
+                    onChange={(e) => setDepartment(e.target.value)}
+                    placeholder="Computer Science"
                     className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
                     required
                   />
                 </div>
               </div>
-
-              {/* STUDENT SIGNUP FIELDS */}
-              {role === 'STUDENT' && (
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-slate-300 font-medium mb-1.5">2. Roll No.</label>
-                    <div className="relative">
-                      <IdCard className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
-                      <input
-                        type="text"
-                        value={rollNo}
-                        onChange={(e) => setRollNo(e.target.value)}
-                        placeholder="e.g. 2024CS001"
-                        className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-slate-300 font-medium mb-1.5">3. Class</label>
-                    <div className="relative">
-                      <BookOpen className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
-                      <input
-                        type="text"
-                        value={className}
-                        onChange={(e) => setClassName(e.target.value)}
-                        placeholder="e.g. SE-CS"
-                        className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* STUDENT & TEACHER DEPARTMENT */}
-              {(role === 'STUDENT' || role === 'TEACHER') && (
-                <div>
-                  <label className="block text-slate-300 font-medium mb-1.5">
-                    {role === 'STUDENT' ? '4. Department' : '2. Department'}
-                  </label>
-                  <div className="relative">
-                    <Building2 className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
-                    <input
-                      type="text"
-                      value={department}
-                      onChange={(e) => setDepartment(e.target.value)}
-                      placeholder="e.g. Computer Science"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-emerald-500"
-                      required
-                    />
-                  </div>
-                </div>
-              )}
-
-              {/* TEACHER ID */}
-              {role === 'TEACHER' && (
-                <div>
-                  <label className="block text-slate-300 font-medium mb-1.5">3. Teacher ID</label>
-                  <div className="relative">
-                    <IdCard className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
-                    <input
-                      type="text"
-                      value={teacherId}
-                      onChange={(e) => setTeacherId(e.target.value)}
-                      placeholder="e.g. FAC-101"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-purple-500"
-                      required
-                    />
-                  </div>
-                </div>
-              )}
-
-              {/* ADMIN ID */}
-              {role === 'ADMIN' && (
-                <div>
-                  <label className="block text-slate-300 font-medium mb-1.5">2. Admin ID</label>
-                  <div className="relative">
-                    <IdCard className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
-                    <input
-                      type="text"
-                      value={adminId}
-                      onChange={(e) => setAdminId(e.target.value)}
-                      placeholder="e.g. ADM-001"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500"
-                      required
-                    />
-                  </div>
-                </div>
-              )}
             </>
           )}
 
-          {/* EMAIL FIELD (Common to both Login and Signup) */}
+          {/* TEACHER SPECIFIC FIELDS (2. department, 3. teacher_id) */}
+          {role === 'TEACHER' && (
+            <>
+              <div>
+                <label className="block text-slate-300 font-medium mb-1.5">2. department</label>
+                <div className="relative">
+                  <Building2 className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
+                  <input
+                    type="text"
+                    value={department}
+                    onChange={(e) => setDepartment(e.target.value)}
+                    placeholder="Campus IT"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-purple-500"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-slate-300 font-medium mb-1.5">3. teacher_id</label>
+                <div className="relative">
+                  <IdCard className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
+                  <input
+                    type="text"
+                    value={teacherId}
+                    onChange={(e) => setTeacherId(e.target.value)}
+                    placeholder="FAC-101"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-purple-500"
+                    required
+                  />
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* ADMIN SPECIFIC FIELDS (2. admin_id) */}
+          {role === 'ADMIN' && (
+            <div>
+              <label className="block text-slate-300 font-medium mb-1.5">2. admin_id</label>
+              <div className="relative">
+                <IdCard className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
+                <input
+                  type="text"
+                  value={adminId}
+                  onChange={(e) => setAdminId(e.target.value)}
+                  placeholder="ADM-001"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500"
+                  required
+                />
+              </div>
+            </div>
+          )}
+
+          {/* EMAIL FIELD (5. college email for Student, 4. college email for Teacher, 3. email for Admin) */}
           <div>
             <label className="block text-slate-300 font-medium mb-1.5">
-              {mode === 'SIGNUP'
-                ? role === 'STUDENT'
-                  ? '5. College Email'
-                  : role === 'TEACHER'
-                  ? '4. College Email'
-                  : '3. Admin Email'
-                : `${role} Email Address`}
+              {role === 'STUDENT'
+                ? '5. college email'
+                : role === 'TEACHER'
+                ? '4. college email'
+                : '3. email'}
             </label>
             <div className="relative">
               <Mail className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
@@ -363,16 +382,14 @@ export const LoginPage: React.FC = () => {
             </div>
           </div>
 
-          {/* PASSWORD FIELD */}
+          {/* PASSWORD FIELD (6. password for Student, 5. password for Teacher, 4. password for Admin) */}
           <div>
             <label className="block text-slate-300 font-medium mb-1.5">
-              {mode === 'SIGNUP'
-                ? role === 'STUDENT'
-                  ? '6. Password'
-                  : role === 'TEACHER'
-                  ? '5. Password'
-                  : '4. Password'
-                : 'Password'}
+              {role === 'STUDENT'
+                ? '6. password'
+                : role === 'TEACHER'
+                ? '5. password'
+                : '4. password'}
             </label>
             <div className="relative">
               <KeyRound className="absolute left-3.5 top-3 w-4 h-4 text-slate-500" />
@@ -399,7 +416,7 @@ export const LoginPage: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-3 rounded-xl text-white font-bold shadow-lg transition-all flex items-center justify-center gap-2 ${
+            className={`w-full py-3.5 rounded-xl text-white font-bold shadow-lg transition-all flex items-center justify-center gap-2 ${
               role === 'TEACHER'
                 ? 'bg-purple-600 hover:bg-purple-500 shadow-glow-blue'
                 : role === 'ADMIN'
@@ -408,12 +425,10 @@ export const LoginPage: React.FC = () => {
             }`}
           >
             {loading ? (
-              <span>Authenticating...</span>
+              <span>Authenticating with {role} Database...</span>
             ) : (
               <>
-                <span>
-                  {mode === 'LOGIN' ? `Sign In to ${role} Portal` : `Create ${role} Account & Continue`}
-                </span>
+                <span>Enter Campus AI Chatbot ({role})</span>
                 <ArrowRight className="w-4 h-4" />
               </>
             )}
@@ -423,7 +438,7 @@ export const LoginPage: React.FC = () => {
         {/* Hackathon Judge Convenience / Demo Auto-Fill */}
         <div className="pt-4 border-t border-white/10">
           <p className="text-[11px] text-slate-400 text-center mb-2 font-medium">
-            💡 Hackathon Judge Demo Accounts (1-Click Fill)
+            💡 Hackathon Judge Demo Accounts (1-Click Fill All Fields)
           </p>
           <div className="grid grid-cols-3 gap-2">
             <button

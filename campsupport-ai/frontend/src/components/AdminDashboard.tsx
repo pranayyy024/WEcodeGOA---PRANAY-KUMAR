@@ -61,26 +61,6 @@ const INITIAL_DOCS: PolicyDocument[] = [
     lastUpdated: '2026-07-30 (Verified)',
     status: 'INDEXED',
   },
-  {
-    id: 'bits-doc-1',
-    name: 'bits_wifi_eduroam_rules.txt',
-    collegeId: 'BITS_PILANI',
-    department: 'Campus IT',
-    size: '1.9 KB',
-    chunks: 15,
-    lastUpdated: '2026-07-30 (Verified)',
-    status: 'INDEXED',
-  },
-  {
-    id: 'iitb-doc-1',
-    name: 'iitb_hostel_curfew_rules.txt',
-    collegeId: 'IIT_BOMBAY',
-    department: 'Hostel Admin',
-    size: '2.5 KB',
-    chunks: 21,
-    lastUpdated: '2026-07-30 (Verified)',
-    status: 'INDEXED',
-  },
 ];
 
 interface AdminDashboardProps {

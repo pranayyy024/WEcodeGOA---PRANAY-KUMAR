@@ -119,7 +119,7 @@ export const Navbar: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-slate-400 font-medium">
-                  Tenant: {college === 'GEC' ? 'Goa Engineering College' : college === 'BITS_PILANI' ? 'BITS Pilani Goa' : 'IIT Bombay'}
+                  Goa Engineering College (GEC)
                 </p>
               </div>
             </Link>
@@ -150,17 +150,6 @@ export const Navbar: React.FC = () => {
               <span>Tickets</span>
             </Link>
             <Link
-              href="/attendance"
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
-                isAttendance
-                  ? 'bg-indigo-600 text-white shadow-glow-blue'
-                  : 'text-slate-400 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <CalendarCheck className="w-4 h-4" />
-              <span>Attendance</span>
-            </Link>
-            <Link
               href="/admin"
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
                 isAdmin
@@ -175,18 +164,10 @@ export const Navbar: React.FC = () => {
 
           {/* User Profile & Tenant Switcher */}
           <div className="flex items-center gap-2.5 flex-wrap justify-center">
-            {/* College Dropdown */}
+            {/* College Badge */}
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs font-medium text-slate-300">
               <Building2 className="w-3.5 h-3.5 text-blue-400" />
-              <select
-                value={college}
-                onChange={(e) => handleChangeCollege(e.target.value as any)}
-                className="bg-transparent text-white text-xs font-semibold focus:outline-none cursor-pointer"
-              >
-                <option value="GEC" className="bg-slate-900 text-white">Goa Eng. College (GEC)</option>
-                <option value="BITS_PILANI" className="bg-slate-900 text-white">BITS Pilani Goa</option>
-                <option value="IIT_BOMBAY" className="bg-slate-900 text-white">IIT Bombay</option>
-              </select>
+              <span className="text-white text-xs font-semibold">GEC Campus</span>
             </div>
 
             {/* Logged in User Profile Badge */}
