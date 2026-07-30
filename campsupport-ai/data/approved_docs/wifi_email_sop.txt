@@ -1,0 +1,13 @@
+CAMPUS IT STANDARD OPERATING PROCEDURE (SOP) - WI-FI & EMAIL ACCESS
+Document ID: SOP-IT-2026-001
+Effective Date: July 2026
+
+1. CAMPUS WI-FI (EduRoam & CampusNet)
+- SSID: "CampusNet-Student" or "eduroam"
+- Authentication: Use your official university student email (e.g., rollno@campus.edu) and password.
+- Wi-Fi Troubleshooting: If authentication fails in Hostel Block A or B, verify that your 802.1x network certificate is installed. For MAC address registration of gaming consoles or IoT devices, submit an IT helpdesk request with your device MAC address.
+- Support Hours: 8:00 AM to 6:00 PM (Monday to Saturday). Outside office hours, submit a helpdesk ticket for automatic priority routing.
+
+2. OFFICIAL STUDENT EMAIL & PASSWORD RESET
+- New students receive email activation links within 24 hours of admission confirmation.
+- To reset an expired password, use the Self-Service Password Portal at https://identity.campus.edu or visit the Computer Center (Block C, Room 104) with your physical student ID card.
