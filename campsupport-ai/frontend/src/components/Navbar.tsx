@@ -3,13 +3,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Bot, Ticket, ShieldCheck, Database } from 'lucide-react';
+import { Bot, Ticket, ShieldCheck, Database, Sliders } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const isChat = pathname === '/';
   const isTickets = pathname?.startsWith('/tickets');
+  const isAdmin = pathname?.startsWith('/admin');
 
   return (
     <header className="sticky top-0 z-40 w-full glass-panel border-b border-white/10 px-4 sm:px-8 py-3">
@@ -42,7 +43,7 @@ export const Navbar: React.FC = () => {
               isChat
                 ? 'bg-emerald-600 text-white shadow-glow-emerald'
                 : 'text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+            }` }
           >
             <Bot className="w-4 h-4" />
             <span>Helpdesk Chat</span>
@@ -53,10 +54,21 @@ export const Navbar: React.FC = () => {
               isTickets
                 ? 'bg-blue-600 text-white shadow-glow-blue'
                 : 'text-slate-400 hover:text-white hover:bg-white/5'
-            }`}
+            }` }
           >
             <Ticket className="w-4 h-4" />
             <span>Tickets Dashboard</span>
+          </Link>
+          <Link
+            href="/admin"
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+              isAdmin
+                ? 'bg-purple-600 text-white shadow-glow-blue'
+                : 'text-slate-400 hover:text-white hover:bg-white/5'
+            }` }
+          >
+            <Sliders className="w-4 h-4" />
+            <span>Admin Knowledge Base</span>
           </Link>
         </nav>
 
