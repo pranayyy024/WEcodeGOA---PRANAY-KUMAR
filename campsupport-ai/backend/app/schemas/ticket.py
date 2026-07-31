@@ -25,7 +25,7 @@ class TicketCreate(BaseModel):
 
 class TicketResponse(BaseModel):
     """Schema representing an existing ticket."""
-    ticket_id: str = Field(..., description="Unique ticket identifier (e.g. #TICK-1042)")
+    ticket_id: str = Field(..., description="Unique ticket identifier (e.g. TKT-2024-001)")
     user_id: str
     title: str
     description: str
@@ -35,3 +35,4 @@ class TicketResponse(BaseModel):
     status: TicketStatus = TicketStatus.OPEN
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     conversation_summary: Optional[List[str]] = Field(default_factory=list)
+    staff_reply: Optional[str] = Field(None, description="Response from campus staff")

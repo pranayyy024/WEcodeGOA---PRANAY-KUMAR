@@ -4,8 +4,15 @@
 
 @layer base {
   :root {
-    --bg-primary: #080b11;
-    --text-primary: #f3f4f6;
+    --bg-primary: #FAFAFC;
+    --text-primary: #111827;
+    --text-body: #6B7280;
+    --card-bg: #FFFFFF;
+    --border-color: #E5E7EB;
+    --primary-color: #7C3AED;
+    --primary-hover: #6D28D9;
+    --secondary-color: #A78BFA;
+    --accent-teal: #14B8A6;
   }
 
   body {
@@ -18,39 +25,82 @@
 }
 
 @layer utilities {
-  .glass-panel {
-    background: rgba(17, 23, 35, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .institutional-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    transition: all 0.15s ease-in-out;
   }
 
-  .glass-card {
-    background: rgba(26, 35, 50, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+  .institutional-card-hover:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    border-color: #D1D5DB;
   }
 
-  .text-gradient {
-    background: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .institutional-btn {
+    background-color: #7C3AED;
+    color: #FFFFFF;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+  .institutional-btn:hover {
+    background-color: #6D28D9;
+  }
+
+  .institutional-input {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    color: #111827;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .institutional-input:focus {
+    outline: none;
+    border-color: #7C3AED;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15);
+  }
+
+  .text-purple-primary {
+    color: #7C3AED;
+  }
+
+  .text-purple-hover {
+    color: #6D28D9;
+  }
+
+  .bg-purple-primary {
+    background-color: #7C3AED;
+  }
+
+  .bg-purple-hover {
+    background-color: #6D28D9;
+  }
+
+  .bg-purple-secondary {
+    background-color: #A78BFA;
+  }
+
+  .text-body {
+    color: #6B7280;
   }
 }
 
-/* Sleek custom scrollbars */
+/* Sleek clean scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(10, 13, 20, 0.8);
+  background: #FAFAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f293d;
+  background: #D1D5DB;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #9CA3AF;
 }

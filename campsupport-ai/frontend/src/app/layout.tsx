@@ -1,12 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import React from 'react';
-import { Navbar } from '../components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'CampSupport AI | RAG-Powered Campus Helpdesk Assistant',
+  title: 'CampSupport AI | Institutional Portal & AI Helpdesk',
   description:
-    'Instant, source-grounded answers to campus queries with guided detail collection and automatic support ticket escalation.',
+    'Official AI-powered campus support system integrated into the college ERP portal for students, faculty, and administrators.',
 };
 
 export default function RootLayout({
@@ -15,10 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen bg-[#0a0d14] text-[#f3f4f6] selection:bg-emerald-500/30 selection:text-emerald-300">
-        <Navbar />
-        <main className="w-full">{children}</main>
+    <html lang="en">
+      <body className="min-h-screen bg-[#FAFAFC] text-[#111827] font-sans antialiased selection:bg-[#7C3AED]/20 selection:text-[#7C3AED]">
+        {children}
       </body>
     </html>
   );

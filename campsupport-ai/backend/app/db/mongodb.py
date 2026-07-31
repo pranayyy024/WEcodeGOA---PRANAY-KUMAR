@@ -1,75 +1,132 @@
 import os
 from typing import Optional, Dict, Any, List
 from datetime import datetime, timezone
-from app.core.config import settings
 
 try:
-    from pymongo import MongoClient
+    from pymongo import MongoClient, DESCENDING
     from pymongo.collection import Collection
-    from pymongo.database import Database
     PYMONGO_AVAILABLE = True
 except ImportError:
     PYMONGO_AVAILABLE = False
 
 
-class MongoDBClient:
-    """Manages connections to MongoDB (Local or Atlas Cloud) for storing helpdesk tickets and conversation logs."""
+class MongoDBTicketStore:
+    """
+    Manages all support ticket persistence using MongoDB Atlas.
+    Falls back to an in-memory dict if Atlas is unreachable.
+    """
 
-    def __init__(self, uri: Optional[str] = None, db_name: str = "campsupport"):
-        self.uri = uri or os.getenv("MONGODB_URL", os.getenv("DATABASE_URL", "mongodb://localhost:27017"))
-        self.db_name = db_name
-        self._client: Optional[Any] = None
-        self._db: Optional[Any] = None
+    def __init__(self):
+        uri = os.getenv("DATABASE_URL", "")
+        self._client = None
+        self._db = None
+        self._connected = False
 
-    def connect(self) -> bool:
-        """Establishes connection to MongoDB."""
         if not PYMONGO_AVAILABLE:
-            print("PyMongo is not installed. Using in-memory fallback.")
-            return False
+            print("[MongoDB] pymongo not installed — using in-memory fallback.")
+            self._fallback: Dict[str, Any] = {}
+            return
+
+        if not uri or uri.strip() == "":
+            print("[MongoDB] DATABASE_URL not set — using in-memory fallback.")
+            self._fallback: Dict[str, Any] = {}
+            return
 
         try:
-            self._client = MongoClient(self.uri, serverSelectionTimeoutMS=2000)
-            self._db = self._client[self.db_name]
-            # Verify connection
-            self._client.admin.command('ping')
-            return True
+            self._client = MongoClient(uri, serverSelectionTimeoutMS=4000)
+            self._db = self._client["campsupport"]
+            # Verify connection with a quick ping
+            self._client.admin.command("ping")
+            self._connected = True
+            print("[MongoDB] ✅ Connected to MongoDB Atlas successfully.")
         except Exception as exc:
-            print(f"MongoDB connection failed ({exc}). Using in-memory fallback.")
+            print(f"[MongoDB] ⚠️  Atlas connection failed ({exc}). Using in-memory fallback.")
             self._client = None
             self._db = None
-            return False
+            self._fallback: Dict[str, Any] = {}
 
-    def get_collection(self, collection_name: str) -> Optional[Any]:
-        """Returns a MongoDB collection instance if connected."""
-        if self._db is not None:
-            return self._db[collection_name]
+    @property
+    def _tickets_collection(self) -> Optional[Any]:
+        if self._connected and self._db is not None:
+            return self._db["tickets"]
         return None
 
-    def save_ticket(self, ticket_data: Dict[str, Any]) -> bool:
-        """Inserts a new support ticket document into the 'tickets' collection."""
-        coll = self.get_collection("tickets")
-        if coll is not None:
+    # ─── CREATE ────────────────────────────────────────────────────────────────
+
+    def save_ticket(self, ticket: Dict[str, Any]) -> bool:
+        """Persists a new ticket document to MongoDB Atlas (or fallback dict)."""
+        if self._tickets_collection is not None:
             try:
-                coll.insert_one(ticket_data)
-                return True
+                result = self._tickets_collection.insert_one(ticket)
+                return result.acknowledged
             except Exception as e:
-                print(f"Error saving ticket to MongoDB: {e}")
+                print(f"[MongoDB] save_ticket error: {e}")
+                return False
+        # Fallback
+        self._fallback[ticket["ticket_id"]] = ticket
+        return True
+
+    # ─── READ ──────────────────────────────────────────────────────────────────
+
+    def get_all_tickets(self, user_id: Optional[str] = None) -> List[Dict[str, Any]]:
+        """Returns all tickets for a user (or all tickets if user_id is None), newest first."""
+        if self._tickets_collection is not None:
+            try:
+                query = {"user_id": user_id} if user_id else {}
+                cursor = self._tickets_collection.find(query, {"_id": 0}).sort(
+                    "created_at", DESCENDING
+                )
+                return list(cursor)
+            except Exception as e:
+                print(f"[MongoDB] get_all_tickets error: {e}")
+                return []
+        # Fallback
+        tickets = list(self._fallback.values())
+        if user_id:
+            tickets = [t for t in tickets if t.get("user_id") == user_id]
+        return sorted(tickets, key=lambda t: t.get("created_at", ""), reverse=True)
+
+    def get_ticket(self, ticket_id: str) -> Optional[Dict[str, Any]]:
+        """Fetches a single ticket by its ID."""
+        if self._tickets_collection is not None:
+            try:
+                return self._tickets_collection.find_one({"ticket_id": ticket_id}, {"_id": 0})
+            except Exception as e:
+                print(f"[MongoDB] get_ticket error: {e}")
+                return None
+        return self._fallback.get(ticket_id)
+
+    # ─── UPDATE ────────────────────────────────────────────────────────────────
+
+    def update_ticket_status(self, ticket_id: str, new_status: str) -> bool:
+        """Updates the status field of an existing ticket."""
+        updated_at = datetime.now(timezone.utc).isoformat()
+        if self._tickets_collection is not None:
+            try:
+                result = self._tickets_collection.update_one(
+                    {"ticket_id": ticket_id},
+                    {"$set": {"status": new_status, "updated_at": updated_at}},
+                )
+                return result.modified_count > 0
+            except Exception as e:
+                print(f"[MongoDB] update_ticket_status error: {e}")
+                return False
+        # Fallback
+        if ticket_id in self._fallback:
+            self._fallback[ticket_id]["status"] = new_status
+            self._fallback[ticket_id]["updated_at"] = updated_at
+            return True
         return False
 
-    def get_all_tickets(self) -> List[Dict[str, Any]]:
-        """Retrieves all tickets from MongoDB, stripping internal _id for clean API response."""
-        coll = self.get_collection("tickets")
-        if coll is not None:
-            tickets = []
-            for doc in coll.find({}, {"_id": 0}):
-                tickets.append(doc)
-            return tickets
-        return []
+    @property
+    def is_connected(self) -> bool:
+        return self._connected
 
 
-# Singleton MongoDB instance
-_mongodb_client_instance = MongoDBClient()
+# ─── Singleton ──────────────────────────────────────────────────────────────────
+
+_ticket_store = MongoDBTicketStore()
 
 
-def get_mongodb_client() -> MongoDBClient:
-    return _mongodb_client_instance
+def get_ticket_store() -> MongoDBTicketStore:
+    return _ticket_store

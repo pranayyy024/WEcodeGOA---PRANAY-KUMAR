@@ -68,12 +68,13 @@ def generate_answer_node(state: GraphState) -> GraphState:
     """Synthesizes an answer grounded strictly in approved document citations."""
     citations = state.get("citations", [])
     if citations:
-        top_snippet = citations[0].snippet
+        top_snippet = citations[0].snippet.strip()
         source = citations[0].source_document
         state["response_text"] = (
-            f"Based on **{source}**:\n\n"
+            f"Here is the official information from **{source}**:\n\n"
             f"{top_snippet}\n\n"
-            f"*(Verified from approved campus knowledge base with confidence score: {state['confidence_score']})*"
+            f"---\n"
+            f"*(Source verified from institutional document **{source}** • Match Confidence: {int(state['confidence_score'] * 100)}%)*"
         )
     else:
         state["response_text"] = "I could not find verified campus policy documents answering this query."
