@@ -27,8 +27,37 @@ class CampusRAGRetriever:
         self._semantic_provider = SemanticSearchProvider(provider_name="hybrid")
         self._load_local_docs()
 
+    def _format_json_to_text(self, data: Any, prefix: str = "") -> str:
+        """Recursively formats JSON structures into clean markdown paragraphs separated by \\n\\n."""
+        import json
+        if isinstance(data, dict):
+            if "question" in data and "answer" in data:
+                cat = data.get("category", "")
+                cat_str = f"[Category: {cat}] " if cat else ""
+                return f"{cat_str}Question: {data['question']}\nAnswer: {data['answer']}"
+            blocks = []
+            for k, v in data.items():
+                title = k.replace("_", " ").title()
+                if isinstance(v, (dict, list)):
+                    sub = self._format_json_to_text(v, prefix=f"{title}: ")
+                    if sub.strip():
+                        blocks.append(sub)
+                else:
+                    blocks.append(f"{title}: {v}")
+            return "\n\n".join(blocks)
+        elif isinstance(data, list):
+            blocks = []
+            for item in data:
+                sub = self._format_json_to_text(item)
+                if sub.strip():
+                    blocks.append(sub)
+            return "\n\n".join(blocks)
+        else:
+            return f"{prefix}{data}"
+
     def _load_local_docs(self):
-        """Loads all .txt and .md approved documents into memory."""
+        """Loads all .txt, .md, and .json approved documents into memory."""
+        import json
         search_paths = [
             self.docs_path,
             Path(__file__).resolve().parents[2] / "data" / "approved_docs",  # backend/data/approved_docs
@@ -46,9 +75,18 @@ class CampusRAGRetriever:
         if not valid_dir:
             return
 
-        for file_path in valid_dir.glob("*.txt"):
+        for file_path in valid_dir.glob("*.*"):
+            suffix = file_path.suffix.lower()
+            if suffix not in [".txt", ".md", ".json"]:
+                continue
             try:
-                content = file_path.read_text(encoding="utf-8")
+                raw_text = file_path.read_text(encoding="utf-8")
+                if suffix == ".json":
+                    parsed_json = json.loads(raw_text)
+                    content = self._format_json_to_text(parsed_json)
+                else:
+                    content = raw_text
+
                 self._documents.append({
                     "source": file_path.name,
                     "content": content

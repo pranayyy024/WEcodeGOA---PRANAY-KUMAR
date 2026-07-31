@@ -1,0 +1,87 @@
+{
+  "placement_and_careers": {
+    "training_and_placement_cell": {
+      "head": "Dr. Vijay Krishnaswamy",
+      "assistant_director": "Ms. Shalini Iyer",
+      "email": "placement@gits.edu.in",
+      "phone": "+91-80-1234-5720",
+      "portal": "https://placement.gits.edu.in",
+      "location": "Main Block, Ground Floor, Room G-12"
+    },
+    "placement_statistics": {
+      "2023_24": {
+        "students_placed": 892,
+        "companies_visited": 145,
+        "highest_package_LPA": 42,
+        "average_package_LPA": 8.6,
+        "median_package_LPA": 7.2,
+        "top_recruiters": [
+          "TCS", "Infosys", "Wipro", "HCL Technologies", "Cognizant",
+          "Accenture", "IBM", "Capgemini", "L&T Infotech", "Mphasis",
+          "Amazon", "Flipkart", "Google (via NASSCOM)", "Microsoft (Research Intern)", "NVIDIA"
+        ]
+      },
+      "2022_23": {
+        "students_placed": 820,
+        "companies_visited": 130,
+        "highest_package_LPA": 38,
+        "average_package_LPA": 7.9,
+        "median_package_LPA": 6.8
+      }
+    },
+    "placement_process": {
+      "eligibility": {
+        "minimum_cgpa": 6.0,
+        "backlogs_allowed": 0,
+        "note": "Individual company criteria may be stricter; check each company's specific eligibility"
+      },
+      "steps": [
+        "Register on placement portal with accurate academic details",
+        "Attend pre-placement training (aptitude, technical, soft skills)",
+        "Apply for companies during drives as announced by TPC",
+        "Shortlisting based on resume / academic score",
+        "Online aptitude test / coding round",
+        "Technical interview (1 or 2 rounds)",
+        "HR interview",
+        "Offer letter collection through TPC",
+        "1 student = 1 offer policy (after accepting an offer, student exits placement process)"
+      ],
+      "one_offer_policy": "Once a student accepts a job offer, they may not participate in further placement drives for better packages. Exception: Dream Company drives for packages > 1.5× accepted offer, subject to TPC discretion."
+    },
+    "pre_placement_training": {
+      "aptitude_training": {
+        "schedule": "Year 3, Semester 6 – Every Saturday 10:00 AM – 12:00 PM",
+        "topics": ["Quantitative Aptitude", "Logical Reasoning", "Verbal Ability", "Data Interpretation"]
+      },
+      "technical_training": {
+        "topics": ["Data Structures & Algorithms", "System Design Basics", "SQL", "Core CS subjects (OS, DBMS, CN, OOP)"]
+      },
+      "soft_skills_training": {
+        "topics": ["Resume Building", "Mock GDs", "Mock Interviews", "Email Writing", "Professional Etiquette"],
+        "trainer": "External Corporate Trainer + Internal Faculty"
+      },
+      "coding_platforms": ["HackerRank (GITS portal)", "LeetCode", "CodeChef (Institute ranking)"]
+    },
+    "higher_education_guidance": {
+      "gate_coaching": "GATE orientation sessions available in Semester 7 (enroll via student affairs)",
+      "gre_gmat_coaching": "Tie-up with IELTS/GRE prep centers (details at TPC)",
+      "mba_entrance": "CAT, MAT, XAT awareness workshops in October each year",
+      "foreign_universities": "International Relations Office assists with SOP, LOR, and visa guidance"
+    },
+    "internship_policy": {
+      "mandatory_internship": {
+        "semester": 6,
+        "duration_weeks": 8,
+        "type": "Industry / Research Internship",
+        "credit": "2 credits",
+        "report_required": true
+      },
+      "summer_internship": {
+        "period": "May–July (after Semester 4 or 6)",
+        "how_to_secure": "Via TPC drives, LinkedIn, Internshala, or self-arranged (requires NOC)",
+        "stipend_typical_range": "INR 5,000 – INR 25,000/month depending on company"
+      },
+      "internshala_partnership": "GITS is a registered Internshala campus partner"
+    }
+  }
+}

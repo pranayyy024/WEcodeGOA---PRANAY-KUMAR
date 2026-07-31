@@ -54,7 +54,14 @@ class TestCampSupportBackend(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         data = res.json()
         self.assertIn("75%", data["answer"])
-        self.assertEqual(data["citations"][0]["source_document"], "academic_calendar_2026.txt")
+        self.assertIn(data["citations"][0]["source_document"], ["academic_calendar_2026.txt", "faq.json", "rules_and_regulations.json"])
+
+    def test_07_json_knowledge_base_retrieval(self):
+        """Verify that JSON knowledge base files (faq.json, rules_and_regulations.json) are parsed and retrieved."""
+        response = run_campus_agent(query="What is the boys dress code on weekdays?")
+        self.assertGreater(response.confidence_score, 0.4)
+        self.assertTrue(len(response.citations) > 0)
+        self.assertIn(response.citations[0].source_document, ["rules_and_regulations.json", "faq.json"])
 
 
 if __name__ == "__main__":

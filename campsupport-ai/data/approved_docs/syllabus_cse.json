@@ -1,0 +1,290 @@
+{
+  "syllabus": {
+    "program": "B.E. Computer Science and Engineering",
+    "regulation": "GITS-R2022",
+    "total_semesters": 8,
+    "semester_1": {
+      "name": "First Semester",
+      "total_credits": 22,
+      "subjects": [
+        {
+          "code": "22MA101",
+          "name": "Engineering Mathematics – I",
+          "type": "Theory",
+          "credits": 4,
+          "lecture_hrs_per_week": 4,
+          "tutorial_hrs_per_week": 0,
+          "lab_hrs_per_week": 0,
+          "internal_marks": 40,
+          "external_marks": 60,
+          "total_marks": 100,
+          "syllabus_units": [
+            {
+              "unit": 1,
+              "title": "Differential Calculus",
+              "topics": ["Limits and Continuity", "Differentiation rules", "Mean Value Theorems", "L'Hôpital's Rule", "Taylor and Maclaurin series"]
+            },
+            {
+              "unit": 2,
+              "title": "Integral Calculus",
+              "topics": ["Definite and indefinite integrals", "Beta and Gamma functions", "Multiple integrals", "Applications to area and volume"]
+            },
+            {
+              "unit": 3,
+              "title": "Differential Equations",
+              "topics": ["First order ODEs", "Second order linear ODEs", "Method of undetermined coefficients", "Variation of parameters", "Applications"]
+            },
+            {
+              "unit": 4,
+              "title": "Linear Algebra",
+              "topics": ["Matrices – types and operations", "Determinants", "Eigenvalues and Eigenvectors", "Cayley-Hamilton theorem", "Diagonalization"]
+            },
+            {
+              "unit": 5,
+              "title": "Vector Calculus",
+              "topics": ["Gradient, Divergence, Curl", "Line and Surface Integrals", "Green's, Stokes', and Gauss' Divergence Theorems"]
+            }
+          ],
+          "reference_books": [
+            "Higher Engineering Mathematics – B.S. Grewal (Khanna Publishers)",
+            "Advanced Engineering Mathematics – E. Kreyszig (Wiley)",
+            "Engineering Mathematics – N.P. Bali (Laxmi Publications)"
+          ]
+        },
+        {
+          "code": "22PH101",
+          "name": "Engineering Physics",
+          "type": "Theory",
+          "credits": 3,
+          "lecture_hrs_per_week": 3,
+          "tutorial_hrs_per_week": 0,
+          "lab_hrs_per_week": 0,
+          "internal_marks": 40,
+          "external_marks": 60,
+          "total_marks": 100,
+          "syllabus_units": [
+            {"unit": 1, "title": "Quantum Mechanics", "topics": ["Wave-particle duality", "Heisenberg Uncertainty Principle", "Schrödinger wave equation", "Particle in a box"]},
+            {"unit": 2, "title": "Lasers and Optical Fibers", "topics": ["Stimulated emission", "Population inversion", "Types of lasers", "Optical fiber communication principles"]},
+            {"unit": 3, "title": "Semiconductor Physics", "topics": ["Energy bands", "Intrinsic and extrinsic semiconductors", "p-n junction", "Hall effect"]},
+            {"unit": 4, "title": "Electromagnetic Theory", "topics": ["Maxwell's equations", "Wave propagation", "Polarization", "Dielectric materials"]},
+            {"unit": 5, "title": "Crystal Structure and X-rays", "topics": ["Crystal lattice", "Miller indices", "X-ray diffraction", "Bragg's law"]}
+          ],
+          "reference_books": [
+            "Engineering Physics – M.N. Avadhanulu (S. Chand)",
+            "Concepts of Modern Physics – A. Beiser (Tata McGraw-Hill)"
+          ]
+        },
+        {
+          "code": "22CH101",
+          "name": "Engineering Chemistry",
+          "type": "Theory",
+          "credits": 3,
+          "lecture_hrs_per_week": 3,
+          "lab_hrs_per_week": 0,
+          "syllabus_units": [
+            {"unit": 1, "title": "Water Treatment", "topics": ["Hardness", "Softening methods", "Boiler problems", "Reverse osmosis", "Desalination"]},
+            {"unit": 2, "title": "Electrochemistry", "topics": ["Cells and EMF", "Batteries", "Fuel cells", "Corrosion", "Corrosion prevention"]},
+            {"unit": 3, "title": "Polymers", "topics": ["Types of polymerization", "Engineering plastics", "Rubber", "Composites", "Biodegradable polymers"]},
+            {"unit": 4, "title": "Fuels and Combustion", "topics": ["Classification of fuels", "Calorific value", "Combustion analysis", "Biodiesel"]},
+            {"unit": 5, "title": "Nanomaterials", "topics": ["Synthesis methods", "Properties", "Characterization", "Applications in engineering"]}
+          ]
+        },
+        {
+          "code": "22CS101",
+          "name": "Problem Solving and Programming (Python)",
+          "type": "Theory + Lab",
+          "credits": 4,
+          "lecture_hrs_per_week": 3,
+          "lab_hrs_per_week": 2,
+          "syllabus_units": [
+            {"unit": 1, "title": "Fundamentals of Programming", "topics": ["Algorithms", "Flowcharts", "Pseudo code", "Problem solving strategies"]},
+            {"unit": 2, "title": "Python Basics", "topics": ["Data types", "Variables", "Operators", "Expressions", "Control structures (if/else/loops)"]},
+            {"unit": 3, "title": "Functions and Modules", "topics": ["Defining functions", "Arguments", "Recursion", "Scope", "Built-in modules"]},
+            {"unit": 4, "title": "Data Structures in Python", "topics": ["Lists", "Tuples", "Dictionaries", "Sets", "Strings", "List comprehensions"]},
+            {"unit": 5, "title": "File Handling and OOP", "topics": ["File operations", "Classes and Objects", "Inheritance", "Polymorphism", "Exception handling"]}
+          ],
+          "lab_programs": [
+            "Basic Python programs – arithmetic, type conversion",
+            "Control flow – if-else, nested loops",
+            "Pattern printing using loops",
+            "Functions – factorial, Fibonacci, GCD",
+            "List manipulation programs",
+            "String operations",
+            "Dictionary-based word frequency counter",
+            "File read/write operations",
+            "Class and object programs",
+            "Inheritance and polymorphism demos"
+          ]
+        },
+        {
+          "code": "22ME101",
+          "name": "Engineering Graphics",
+          "type": "Lab / Drawing",
+          "credits": 2,
+          "lecture_hrs_per_week": 1,
+          "lab_hrs_per_week": 4,
+          "syllabus_units": [
+            {"unit": 1, "title": "Projections of Points and Lines"},
+            {"unit": 2, "title": "Projections of Planes"},
+            {"unit": 3, "title": "Projections of Solids"},
+            {"unit": 4, "title": "Sections and Development of Surfaces"},
+            {"unit": 5, "title": "Isometric and Perspective Views, Introduction to AutoCAD"}
+          ]
+        },
+        {
+          "code": "22EN101",
+          "name": "Communicative English",
+          "type": "Theory",
+          "credits": 2,
+          "lecture_hrs_per_week": 2,
+          "syllabus_units": [
+            {"unit": 1, "title": "Grammar Essentials", "topics": ["Parts of speech", "Tenses", "Articles", "Prepositions"]},
+            {"unit": 2, "title": "Reading and Comprehension", "topics": ["Skimming and scanning", "Reading technical texts", "Vocabulary building"]},
+            {"unit": 3, "title": "Writing Skills", "topics": ["Paragraph writing", "Letter and email writing", "Report writing", "Resume writing"]},
+            {"unit": 4, "title": "Speaking Skills", "topics": ["Group discussion", "Presentation skills", "Interview skills", "Pronunciation"]},
+            {"unit": 5, "title": "Technical Communication", "topics": ["Technical report formats", "Project documentation", "Academic writing"]}
+          ]
+        },
+        {
+          "code": "22PH101L",
+          "name": "Engineering Physics Lab",
+          "type": "Lab",
+          "credits": 1,
+          "lab_hrs_per_week": 3,
+          "experiments": [
+            "Measurement using Vernier and Screw gauge",
+            "Young's modulus – Cantilever method",
+            "Determination of wavelength using diffraction grating",
+            "Refractive index using spectrometer",
+            "Laser beam divergence and spot size",
+            "Hall effect measurement",
+            "Resonance tube – Speed of sound in air",
+            "Carey Foster bridge – Resistance measurement",
+            "LCR circuit – Resonance",
+            "I-V characteristics of p-n junction diode and Zener diode"
+          ]
+        },
+        {
+          "code": "22CH101L",
+          "name": "Engineering Chemistry Lab",
+          "type": "Lab",
+          "credits": 1,
+          "experiments": [
+            "Estimation of hardness of water (EDTA method)",
+            "Acid-base titration",
+            "Redox titration",
+            "Determination of pH",
+            "Determination of chloride in water (Mohr's method)",
+            "Preparation of nanoparticles",
+            "Flame test",
+            "Preparation and testing of polymers"
+          ]
+        },
+        {
+          "code": "22HU101",
+          "name": "Professional Ethics and Human Values",
+          "type": "Theory",
+          "credits": 2,
+          "lecture_hrs_per_week": 2,
+          "syllabus_units": [
+            {"unit": 1, "title": "Ethics and Engineering", "topics": ["Moral reasoning", "Ethical theories", "Engineering as profession"]},
+            {"unit": 2, "title": "Engineering Ethics", "topics": ["Safety and risk", "Responsibility to society", "Code of ethics (IEEE, ACM)"]},
+            {"unit": 3, "title": "Human Values", "topics": ["Values in education", "Happiness", "Prosperity", "Trust"]},
+            {"unit": 4, "title": "Social Responsibility", "topics": ["Environmental ethics", "Sustainable development", "Corporate social responsibility"]},
+            {"unit": 5, "title": "Intellectual Property Rights", "topics": ["Patents", "Copyrights", "Trademarks", "Technology transfer"]}
+          ]
+        }
+      ]
+    },
+    "semester_3_cse": {
+      "name": "Third Semester – CSE",
+      "total_credits": 21,
+      "subjects": [
+        {
+          "code": "22MA301",
+          "name": "Discrete Mathematics",
+          "credits": 4,
+          "syllabus_units": [
+            {"unit": 1, "title": "Logic and Proofs", "topics": ["Propositional logic", "Predicates", "Proof techniques", "Mathematical induction"]},
+            {"unit": 2, "title": "Set Theory and Relations", "topics": ["Sets", "Relations", "Functions", "Equivalence relations", "Partial orders"]},
+            {"unit": 3, "title": "Graph Theory", "topics": ["Graphs", "Trees", "Paths", "Shortest paths", "Spanning trees", "Graph coloring"]},
+            {"unit": 4, "title": "Algebraic Structures", "topics": ["Groups", "Rings", "Fields", "Lattices", "Boolean algebra"]},
+            {"unit": 5, "title": "Combinatorics", "topics": ["Counting principles", "Permutations", "Combinations", "Pigeonhole principle", "Recurrence relations"]}
+          ]
+        },
+        {
+          "code": "22CS301",
+          "name": "Data Structures and Algorithms",
+          "credits": 4,
+          "syllabus_units": [
+            {"unit": 1, "title": "Arrays and Linked Lists", "topics": ["Array operations", "Singly, Doubly, Circular Linked Lists", "Stack using arrays and linked lists"]},
+            {"unit": 2, "title": "Queues and Trees", "topics": ["Queue variants", "Binary trees", "BST", "AVL trees", "Heap"]},
+            {"unit": 3, "title": "Sorting and Searching", "topics": ["Bubble sort", "Quick sort", "Merge sort", "Heap sort", "Binary search"]},
+            {"unit": 4, "title": "Graphs", "topics": ["Graph representations", "BFS", "DFS", "Dijkstra's algorithm", "Prim's and Kruskal's algorithms"]},
+            {"unit": 5, "title": "Hashing and Advanced Structures", "topics": ["Hash functions", "Collision resolution", "B-trees", "Tries", "Segment trees"]}
+          ],
+          "lab_programs": [
+            "Implementation of Stack (array and linked list)",
+            "Queue and Circular Queue operations",
+            "Infix to Postfix conversion",
+            "Binary Search Tree – Insert, Delete, Search, Traversals",
+            "AVL Tree rotations",
+            "Graph BFS and DFS",
+            "Dijkstra's Shortest Path",
+            "Sorting algorithms (Bubble, Insertion, Selection, Quick, Merge)",
+            "Hash table implementation",
+            "Huffman encoding"
+          ]
+        },
+        {
+          "code": "22CS302",
+          "name": "Computer Organization and Architecture",
+          "credits": 3,
+          "syllabus_units": [
+            {"unit": 1, "title": "Digital Logic", "topics": ["Boolean algebra", "Logic gates", "Combinational circuits", "Adders", "Multiplexers"]},
+            {"unit": 2, "title": "Data Representation", "topics": ["Number systems", "Floating point", "Signed representation", "Arithmetic operations"]},
+            {"unit": 3, "title": "Processor Design", "topics": ["CPU components", "ALU design", "Instruction set architecture", "RISC vs CISC"]},
+            {"unit": 4, "title": "Memory Hierarchy", "topics": ["Cache memory", "Main memory", "Virtual memory", "Memory mapping"]},
+            {"unit": 5, "title": "I/O and Interrupts", "topics": ["I/O techniques", "DMA", "Interrupts", "Bus architecture", "Pipelining"]}
+          ]
+        },
+        {
+          "code": "22CS303",
+          "name": "Object Oriented Programming (Java)",
+          "credits": 4,
+          "syllabus_units": [
+            {"unit": 1, "title": "Java Fundamentals", "topics": ["JVM architecture", "Data types", "Operators", "Control flow"]},
+            {"unit": 2, "title": "Classes and Objects", "topics": ["Classes", "Methods", "Constructors", "this keyword", "Static members"]},
+            {"unit": 3, "title": "Inheritance and Polymorphism", "topics": ["Single, multilevel, hierarchical inheritance", "Method overriding", "Abstract classes", "Interfaces"]},
+            {"unit": 4, "title": "Exception Handling and I/O", "topics": ["Try-catch-finally", "Checked/unchecked exceptions", "File I/O", "Serialization"]},
+            {"unit": 5, "title": "Collections and Multithreading", "topics": ["ArrayList", "HashMap", "Iterators", "Threads", "Synchronization", "Generics"]}
+          ]
+        },
+        {
+          "code": "22CS304",
+          "name": "Database Management Systems",
+          "credits": 4,
+          "syllabus_units": [
+            {"unit": 1, "title": "Introduction to DBMS", "topics": ["Database concepts", "ER model", "ER diagrams", "Schema design"]},
+            {"unit": 2, "title": "Relational Model", "topics": ["Relational algebra", "SQL DDL and DML", "Integrity constraints"]},
+            {"unit": 3, "title": "Advanced SQL", "topics": ["Joins", "Subqueries", "Views", "Stored procedures", "Triggers", "Cursors"]},
+            {"unit": 4, "title": "Normalization", "topics": ["Functional dependencies", "1NF, 2NF, 3NF, BCNF", "Decomposition"]},
+            {"unit": 5, "title": "Transactions and Concurrency", "topics": ["ACID properties", "Concurrency control", "Locks", "Deadlock", "Recovery"]}
+          ]
+        },
+        {
+          "code": "22CS305",
+          "name": "Computer Networks",
+          "credits": 3,
+          "syllabus_units": [
+            {"unit": 1, "title": "Network Models", "topics": ["OSI model", "TCP/IP model", "Protocols", "Physical layer"]},
+            {"unit": 2, "title": "Data Link Layer", "topics": ["Framing", "Error detection and correction", "Flow control", "MAC protocols"]},
+            {"unit": 3, "title": "Network Layer", "topics": ["IP addressing", "Subnetting", "Routing algorithms", "IPv6"]},
+            {"unit": 4, "title": "Transport Layer", "topics": ["TCP", "UDP", "Congestion control", "Flow control", "Port numbers"]},
+            {"unit": 5, "title": "Application Layer", "topics": ["DNS", "HTTP/HTTPS", "FTP", "SMTP", "SNMP", "Socket programming"]}
+          ]
+        }
+      ]
+    }
+  }
+}

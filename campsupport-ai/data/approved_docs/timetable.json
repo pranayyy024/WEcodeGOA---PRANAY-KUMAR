@@ -1,0 +1,111 @@
+{
+  "timetable": {
+    "academic_year": "2025-2026",
+    "odd_semester": {
+      "CSE_3rd_sem_section_A": {
+        "department": "CSE",
+        "semester": 3,
+        "section": "A",
+        "class_teacher": "Dr. Lakshmi Narayanan",
+        "room": "Block A, Room 305",
+        "schedule": {
+          "Monday": [
+            {"period": 1, "time": "08:30-09:20", "subject": "Data Structures (22CS301)", "faculty": "Prof. Srikanth Rao"},
+            {"period": 2, "time": "09:20-10:10", "subject": "Data Structures (22CS301)", "faculty": "Prof. Srikanth Rao"},
+            {"period": 3, "time": "10:10-11:00", "subject": "Discrete Mathematics (22MA301)", "faculty": "Dr. Malathi Suresh"},
+            {"period": "break", "time": "11:00-11:15", "subject": "Short Break"},
+            {"period": 4, "time": "11:15-12:05", "subject": "Computer Organization (22CS302)", "faculty": "Prof. Karthik Balaji"},
+            {"period": 5, "time": "12:05-12:55", "subject": "OOP Java (22CS303)", "faculty": "Dr. Anitha Rajan"},
+            {"period": "lunch", "time": "12:55-13:40", "subject": "Lunch Break"},
+            {"period": 6, "time": "13:40-14:30", "subject": "DBMS Lab (22CS304L)", "faculty": "Ms. Preethi Kumar", "room": "DB Lab"},
+            {"period": 7, "time": "14:30-15:20", "subject": "DBMS Lab (22CS304L)", "faculty": "Ms. Preethi Kumar", "room": "DB Lab"},
+            {"period": 8, "time": "15:20-16:10", "subject": "DBMS Lab (22CS304L)", "faculty": "Ms. Preethi Kumar", "room": "DB Lab"}
+          ],
+          "Tuesday": [
+            {"period": 1, "time": "08:30-09:20", "subject": "Discrete Mathematics (22MA301)", "faculty": "Dr. Malathi Suresh"},
+            {"period": 2, "time": "09:20-10:10", "subject": "Computer Networks (22CS305)", "faculty": "Dr. Suresh Padmanabhan"},
+            {"period": 3, "time": "10:10-11:00", "subject": "OOP Java (22CS303)", "faculty": "Dr. Anitha Rajan"},
+            {"period": "break", "time": "11:00-11:15", "subject": "Short Break"},
+            {"period": 4, "time": "11:15-12:05", "subject": "DBMS (22CS304)", "faculty": "Ms. Preethi Kumar"},
+            {"period": 5, "time": "12:05-12:55", "subject": "Data Structures (22CS301)", "faculty": "Prof. Srikanth Rao"},
+            {"period": "lunch", "time": "12:55-13:40", "subject": "Lunch Break"},
+            {"period": 6, "time": "13:40-14:30", "subject": "Java Lab (22CS303L)", "faculty": "Dr. Anitha Rajan", "room": "Programming Lab 2"},
+            {"period": 7, "time": "14:30-15:20", "subject": "Java Lab (22CS303L)", "faculty": "Dr. Anitha Rajan", "room": "Programming Lab 2"},
+            {"period": 8, "time": "15:20-16:10", "subject": "Java Lab (22CS303L)", "faculty": "Dr. Anitha Rajan", "room": "Programming Lab 2"}
+          ],
+          "Wednesday": [
+            {"period": 1, "time": "08:30-09:20", "subject": "Computer Organization (22CS302)", "faculty": "Prof. Karthik Balaji"},
+            {"period": 2, "time": "09:20-10:10", "subject": "DBMS (22CS304)", "faculty": "Ms. Preethi Kumar"},
+            {"period": 3, "time": "10:10-11:00", "subject": "Discrete Mathematics (22MA301)", "faculty": "Dr. Malathi Suresh"},
+            {"period": "break", "time": "11:00-11:15", "subject": "Short Break"},
+            {"period": 4, "time": "11:15-12:05", "subject": "Computer Networks (22CS305)", "faculty": "Dr. Suresh Padmanabhan"},
+            {"period": 5, "time": "12:05-12:55", "subject": "OOP Java (22CS303)", "faculty": "Dr. Anitha Rajan"},
+            {"period": "lunch", "time": "12:55-13:40", "subject": "Lunch Break"},
+            {"period": 6, "time": "13:40-14:30", "subject": "DSA Lab (22CS301L)", "faculty": "Prof. Srikanth Rao", "room": "Programming Lab 1"},
+            {"period": 7, "time": "14:30-15:20", "subject": "DSA Lab (22CS301L)", "faculty": "Prof. Srikanth Rao", "room": "Programming Lab 1"},
+            {"period": 8, "time": "15:20-16:10", "subject": "DSA Lab (22CS301L)", "faculty": "Prof. Srikanth Rao", "room": "Programming Lab 1"}
+          ],
+          "Thursday": [
+            {"period": 1, "time": "08:30-09:20", "subject": "DBMS (22CS304)", "faculty": "Ms. Preethi Kumar"},
+            {"period": 2, "time": "09:20-10:10", "subject": "Discrete Mathematics (22MA301)", "faculty": "Dr. Malathi Suresh"},
+            {"period": 3, "time": "10:10-11:00", "subject": "Data Structures (22CS301)", "faculty": "Prof. Srikanth Rao"},
+            {"period": "break", "time": "11:00-11:15", "subject": "Short Break"},
+            {"period": 4, "time": "11:15-12:05", "subject": "Computer Organization (22CS302)", "faculty": "Prof. Karthik Balaji"},
+            {"period": 5, "time": "12:05-12:55", "subject": "Professional Ethics (22HU301)", "faculty": "Dr. Suma Krishnan"},
+            {"period": "lunch", "time": "12:55-13:40", "subject": "Lunch Break"},
+            {"period": 6, "time": "13:40-14:30", "subject": "Networks Lab (22CS305L)", "faculty": "Dr. Suresh Padmanabhan", "room": "Networks Lab"},
+            {"period": 7, "time": "14:30-15:20", "subject": "Networks Lab (22CS305L)", "faculty": "Dr. Suresh Padmanabhan", "room": "Networks Lab"},
+            {"period": 8, "time": "15:20-16:10", "subject": "Networks Lab (22CS305L)", "faculty": "Dr. Suresh Padmanabhan", "room": "Networks Lab"}
+          ],
+          "Friday": [
+            {"period": 1, "time": "08:30-09:20", "subject": "Computer Networks (22CS305)", "faculty": "Dr. Suresh Padmanabhan"},
+            {"period": 2, "time": "09:20-10:10", "subject": "OOP Java (22CS303)", "faculty": "Dr. Anitha Rajan"},
+            {"period": 3, "time": "10:10-11:00", "subject": "Data Structures (22CS301)", "faculty": "Prof. Srikanth Rao"},
+            {"period": "break", "time": "11:00-11:15", "subject": "Short Break"},
+            {"period": 4, "time": "11:15-12:05", "subject": "Discrete Mathematics (22MA301)", "faculty": "Dr. Malathi Suresh"},
+            {"period": 5, "time": "12:05-12:55", "subject": "Professional Ethics (22HU301)", "faculty": "Dr. Suma Krishnan"},
+            {"period": "lunch", "time": "12:55-13:40", "subject": "Lunch Break"},
+            {"period": 6, "time": "13:40-14:30", "subject": "Library / Self Study / Seminar", "faculty": "—"},
+            {"period": 7, "time": "14:30-15:20", "subject": "Club Activities / Co-curricular / Mentoring", "faculty": "Class Teacher"},
+            {"period": 8, "time": "15:20-16:10", "subject": "Mentoring Session", "faculty": "Dr. Lakshmi Narayanan"}
+          ],
+          "Saturday": [
+            {"period": 1, "time": "08:30-09:20", "subject": "Computer Organization (22CS302)", "faculty": "Prof. Karthik Balaji"},
+            {"period": 2, "time": "09:20-10:10", "subject": "DBMS (22CS304)", "faculty": "Ms. Preethi Kumar"},
+            {"period": 3, "time": "10:10-11:00", "subject": "Remedial / Bridge Class (as required)", "faculty": "Respective Faculty"},
+            {"period": "break", "time": "11:00-11:10", "subject": "Short Break"},
+            {"period": 4, "time": "11:10-12:00", "subject": "Open Elective / Value Added Course", "faculty": "—"},
+            {"period": 5, "time": "12:00-12:50", "subject": "Open Elective / Value Added Course", "faculty": "—"}
+          ]
+        }
+      }
+    },
+    "period_timings": {
+      "period_1": "08:30 – 09:20",
+      "period_2": "09:20 – 10:10",
+      "period_3": "10:10 – 11:00",
+      "short_break": "11:00 – 11:15",
+      "period_4": "11:15 – 12:05",
+      "period_5": "12:05 – 12:55",
+      "lunch_break": "12:55 – 13:40",
+      "period_6": "13:40 – 14:30",
+      "period_7": "14:30 – 15:20",
+      "period_8": "15:20 – 16:10"
+    },
+    "exam_timetable_sample": {
+      "end_semester_exams_odd_2025": [
+        {"date": "2025-12-01", "day": "Monday",    "time": "10:00 AM – 01:00 PM", "subject": "Discrete Mathematics (22MA301)",          "code": "22MA301", "sem": 3},
+        {"date": "2025-12-02", "day": "Tuesday",   "time": "10:00 AM – 01:00 PM", "subject": "Data Structures (22CS301)",               "code": "22CS301", "sem": 3},
+        {"date": "2025-12-04", "day": "Thursday",  "time": "10:00 AM – 01:00 PM", "subject": "Computer Organization (22CS302)",         "code": "22CS302", "sem": 3},
+        {"date": "2025-12-06", "day": "Saturday",  "time": "10:00 AM – 01:00 PM", "subject": "OOP Java (22CS303)",                      "code": "22CS303", "sem": 3},
+        {"date": "2025-12-08", "day": "Monday",    "time": "10:00 AM – 01:00 PM", "subject": "Database Management Systems (22CS304)",   "code": "22CS304", "sem": 3},
+        {"date": "2025-12-10", "day": "Wednesday", "time": "10:00 AM – 01:00 PM", "subject": "Computer Networks (22CS305)",             "code": "22CS305", "sem": 3},
+        {"date": "2025-12-12", "day": "Friday",    "time": "10:00 AM – 01:00 PM", "subject": "Professional Ethics (22HU301)",           "code": "22HU301", "sem": 3},
+        {"date": "2025-12-01", "day": "Monday",    "time": "02:00 PM – 05:00 PM", "subject": "Engineering Mathematics I (22MA101)",     "code": "22MA101", "sem": 1},
+        {"date": "2025-12-02", "day": "Tuesday",   "time": "02:00 PM – 05:00 PM", "subject": "Engineering Physics (22PH101)",           "code": "22PH101", "sem": 1},
+        {"date": "2025-12-04", "day": "Thursday",  "time": "02:00 PM – 05:00 PM", "subject": "Engineering Chemistry (22CH101)",         "code": "22CH101", "sem": 1},
+        {"date": "2025-12-06", "day": "Saturday",  "time": "02:00 PM – 05:00 PM", "subject": "Problem Solving and Programming (22CS101)","code": "22CS101", "sem": 1}
+      ]
+    }
+  }
+}

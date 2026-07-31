@@ -1,0 +1,133 @@
+{
+  "grading_system": {
+    "type": "Credit-Based Grading System (CBGS)",
+    "gpa_scale": 10,
+    "passing_minimum_gpa": 4.0,
+    "grade_table": [
+      {"marks_range": "90-100", "grade": "O",  "grade_points": 10, "description": "Outstanding"},
+      {"marks_range": "80-89",  "grade": "A+", "grade_points": 9,  "description": "Excellent"},
+      {"marks_range": "70-79",  "grade": "A",  "grade_points": 8,  "description": "Very Good"},
+      {"marks_range": "60-69",  "grade": "B+", "grade_points": 7,  "description": "Good"},
+      {"marks_range": "50-59",  "grade": "B",  "grade_points": 6,  "description": "Above Average"},
+      {"marks_range": "45-49",  "grade": "C",  "grade_points": 5,  "description": "Average"},
+      {"marks_range": "40-44",  "grade": "P",  "grade_points": 4,  "description": "Pass"},
+      {"marks_range": "Below 40","grade": "F", "grade_points": 0,  "description": "Fail"},
+      {"marks_range": "Absent", "grade": "Ab", "grade_points": 0,  "description": "Absent"},
+      {"marks_range": "Detained","grade": "W", "grade_points": 0,  "description": "Withheld (Attendance Shortage)"}
+    ],
+    "sgpa_formula": "SGPA = Σ(Grade Points × Credits) / Σ(Credits) for the semester",
+    "cgpa_formula": "CGPA = Σ(Grade Points × Credits for all semesters) / Σ(Total Credits earned)",
+    "cgpa_to_percentage": "Percentage = (CGPA × 10) - 7.5 (Approx conversion)",
+    "honours_classification": [
+      {"cgpa_range": "9.0 – 10.0", "class": "First Class with Distinction – Chancellor's Gold Medal eligible"},
+      {"cgpa_range": "8.5 – 8.99", "class": "First Class with Distinction"},
+      {"cgpa_range": "7.5 – 8.49", "class": "First Class"},
+      {"cgpa_range": "6.0 – 7.49", "class": "Second Class"},
+      {"cgpa_range": "4.0 – 5.99", "class": "Pass Class"},
+      {"cgpa_range": "Below 4.0",  "class": "Fail / Not Eligible for Degree"}
+    ],
+    "credit_structure": {
+      "lecture_credit": "1 credit = 1 hour/week of lecture",
+      "lab_credit": "1 credit = 2 hours/week of lab",
+      "total_credits_BE": 160,
+      "total_credits_ME": 64,
+      "total_credits_MBA": 100
+    },
+    "attendance_rules": {
+      "minimum_attendance": "75%",
+      "condonation_with_medical": "65% – 74% (with valid medical certificate, requires HOD + Principal approval)",
+      "below_65": "Detained – not eligible for end-semester exam (W grade)",
+      "attendance_portal": "https://erp.gits.edu.in/attendance",
+      "attendance_update_frequency": "Updated daily by 5 PM",
+      "shortage_notification": "SMS + Email sent to student and parent when below 80%"
+    },
+    "internal_assessment": {
+      "IA1_weightage": "15 marks",
+      "IA2_weightage": "15 marks",
+      "assignments_quiz_weightage": "10 marks",
+      "total_internal_marks": 40,
+      "end_semester_exam_marks": 60,
+      "minimum_internal_to_appear_for_exam": "40% of internal marks (i.e., 16 out of 40)",
+      "note": "Best of 2 IA tests considered if 3 tests conducted"
+    },
+    "exam_rules": {
+      "hall_ticket": "Mandatory – obtained from exam portal after fee clearance",
+      "id_proof_required": true,
+      "mobile_phones": "Strictly Prohibited in exam hall",
+      "electronic_devices": "Not allowed unless specifically permitted for that paper",
+      "reporting_time": "30 minutes before exam start",
+      "late_entry": "Not allowed after 15 minutes of exam start",
+      "malpractice_penalty": "Immediate cancellation of exam + one-year debarment",
+      "answer_sheet_return": "Not allowed",
+      "revaluation": {
+        "request_window": "Within 15 days of result declaration",
+        "fee_per_subject": "INR 750",
+        "challenge_valuation_fee": "INR 1500"
+      }
+    },
+    "backlog_policy": {
+      "allowed_backlogs_for_next_year": "Up to 4 arrears",
+      "maximum_duration_to_clear": "N+2 years (N = normal duration)",
+      "backlog_exam_fee": "INR 500 per subject",
+      "note": "Students with more than 4 backlogs in any semester cannot be promoted"
+    }
+  },
+  "student_records": {
+    "note": "Sample student record structure used in the system",
+    "fields": {
+      "student_id": "Unique 10-digit ID (e.g., 2022CSE001)",
+      "name": "Full Name as per 10th certificate",
+      "dob": "Date of Birth",
+      "gender": "Male / Female / Other",
+      "blood_group": "A+, B+, O+, etc.",
+      "email": "student@gits.edu.in (format: usn@gits.edu.in)",
+      "phone": "10-digit mobile number",
+      "parent_name": "Father's / Mother's / Guardian's Name",
+      "parent_phone": "Parent contact number",
+      "address": "Permanent Address",
+      "program": "Enrolled Program (e.g., B.E. CSE)",
+      "branch": "Department Code (e.g., CSE)",
+      "batch": "Joining year (e.g., 2022)",
+      "current_semester": "Current active semester",
+      "section": "Section A / B / C",
+      "cgpa": "Current CGPA",
+      "arrears": "Number of active backlogs",
+      "attendance_percent": "Overall attendance percentage",
+      "scholarship_status": "Active / None",
+      "hostel_resident": "Yes / No",
+      "category": "General / OBC / SC / ST / EWS",
+      "admission_type": "CET / Management / NRI / Lateral Entry"
+    },
+    "sample_student": {
+      "student_id": "2022CSE045",
+      "name": "Arjun Krishnaswamy",
+      "dob": "2004-06-15",
+      "gender": "Male",
+      "blood_group": "B+",
+      "email": "2022cse045@gits.edu.in",
+      "phone": "9876543210",
+      "parent_name": "Ravi Krishnaswamy",
+      "parent_phone": "9876543211",
+      "program": "B.E. Computer Science and Engineering",
+      "branch": "CSE",
+      "batch": 2022,
+      "current_semester": 6,
+      "section": "A",
+      "cgpa": 8.42,
+      "sgpa_history": [
+        {"semester": 1, "sgpa": 8.1, "credits_earned": 22},
+        {"semester": 2, "sgpa": 8.5, "credits_earned": 22},
+        {"semester": 3, "sgpa": 8.6, "credits_earned": 21},
+        {"semester": 4, "sgpa": 8.7, "credits_earned": 22},
+        {"semester": 5, "sgpa": 8.3, "credits_earned": 21}
+      ],
+      "arrears": 0,
+      "attendance_percent": 82,
+      "scholarship_status": "Merit Scholarship Active",
+      "hostel_resident": true,
+      "hostel_block": "Boys Hostel Block B, Room 214",
+      "category": "General",
+      "admission_type": "CET"
+    }
+  }
+}

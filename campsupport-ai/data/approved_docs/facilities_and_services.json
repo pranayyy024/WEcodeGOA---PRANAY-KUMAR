@@ -1,0 +1,187 @@
+{
+  "facilities_and_services": {
+    "library": {
+      "name": "GITS Central Library",
+      "librarian": "Ms. Padmavathi Krishnan",
+      "email": "library@gits.edu.in",
+      "phone": "+91-80-1234-5724",
+      "location": "Central Library Building (between Block A and Block B)",
+      "timings": {
+        "weekdays": "8:00 AM – 10:00 PM",
+        "saturday": "8:00 AM – 8:00 PM",
+        "sunday": "10:00 AM – 6:00 PM",
+        "exam_period": "8:00 AM – 11:00 PM (extended during exam season)"
+      },
+      "collection": {
+        "books": 85000,
+        "journals_print": 120,
+        "journals_online": 5000,
+        "magazines": 45,
+        "ebooks": 20000,
+        "back_volumes": 10000,
+        "theses_dissertations": 1200,
+        "newspapers": 12
+      },
+      "digital_resources": [
+        "NPTEL Lectures",
+        "IEEE Xplore Digital Library",
+        "ACM Digital Library",
+        "Springer Link",
+        "Elsevier ScienceDirect",
+        "DELNET Network",
+        "INFLIBNET (Shodhganga for theses)"
+      ],
+      "borrowing_rules": {
+        "UG_students": {"books_allowed": 3, "loan_period_days": 14},
+        "PG_students": {"books_allowed": 5, "loan_period_days": 21},
+        "PhD_students": {"books_allowed": 8, "loan_period_days": 30},
+        "faculty": {"books_allowed": 15, "loan_period_days": 90},
+        "fine_per_day_overdue": "INR 2/day",
+        "lost_book_replacement": "2× cost of book"
+      },
+      "services": [
+        "Book lending",
+        "Reference service",
+        "Document delivery (inter-library loan via DELNET)",
+        "Photocopying (Re. 1/page)",
+        "Scanning (email to self: Rs. 5/page)",
+        "Printing (B&W: Re. 1/page, Colour: Rs. 10/page)",
+        "Online catalog (OPAC): https://library.gits.edu.in/opac",
+        "Reading rooms: 3 (capacity: 250 seats)",
+        "Silent study hall: 1 (capacity: 80 seats)",
+        "Group discussion rooms: 4 (book via library portal)",
+        "Audio-visual room (for NPTEL): 1"
+      ]
+    },
+    "medical_centre": {
+      "name": "GITS Medical Centre",
+      "doctor_on_duty": "Dr. Ramesh Nair (MBBS)",
+      "nurse_on_duty": "Ms. Kavitha Mani",
+      "email": "medical@gits.edu.in",
+      "phone": "+91-80-1234-5750",
+      "location": "Near Main Gate (behind Student Affairs Office)",
+      "timings": {
+        "regular_opd": "9:00 AM – 5:00 PM (Monday to Saturday)",
+        "emergency": "24/7 (nurse on duty at all times; doctor on call after hours)",
+        "ambulance": "Available 24/7 – call extension 5750"
+      },
+      "services": [
+        "General OPD consultation",
+        "First aid",
+        "Dispensary (common medicines free for students)",
+        "Emergency stabilisation and transport",
+        "Health checkup drive (once per semester)",
+        "Blood group testing",
+        "Mental health counselling referrals",
+        "COVID-19 guidelines compliance"
+      ],
+      "nearby_hospitals": [
+        {"name": "Greenfield City Hospital", "distance_km": 2.5, "phone": "080-9876-1234", "type": "Multi-specialty"},
+        {"name": "Apollo Clinic, Tech Park", "distance_km": 1.8, "type": "Clinic"},
+        {"name": "Manipal Hospital, Greenfield", "distance_km": 5.0, "phone": "080-9876-5678", "type": "Multi-specialty"}
+      ]
+    },
+    "counselling_centre": {
+      "name": "GITS Student Counselling Centre",
+      "counsellor": "Ms. Nandini Bose (Psychologist, M.Phil Clinical Psychology)",
+      "email": "counselling@gits.edu.in",
+      "phone": "+91-80-1234-5760",
+      "location": "Main Block, Room 12 (adjacent to Student Affairs)",
+      "timings": "Monday, Wednesday, Friday: 10:00 AM – 4:00 PM",
+      "services": [
+        "One-on-one counselling sessions (confidential)",
+        "Academic stress and anxiety management",
+        "Relationship and peer issues",
+        "Career anxiety counselling",
+        "Group workshops: stress management, mindfulness",
+        "Referral to external mental health professionals if needed"
+      ],
+      "online_booking": "https://erp.gits.edu.in/counselling-appointment",
+      "emergency_mental_health": "iCall (TISS): 9152987821 (Monday–Saturday, 8 AM – 10 PM)"
+    },
+    "sports_complex": {
+      "name": "GITS Sports Complex",
+      "sports_director": "Mr. Arun Menon",
+      "email": "sports@gits.edu.in",
+      "location": "South Campus",
+      "facilities": [
+        {"sport": "Cricket", "facility": "Full-size cricket ground with pitch"},
+        {"sport": "Football", "facility": "FIFA-standard football field"},
+        {"sport": "Basketball", "facility": "2 outdoor courts + 1 indoor court"},
+        {"sport": "Volleyball", "facility": "2 courts"},
+        {"sport": "Badminton", "facility": "4 indoor courts (Synthetic flooring)"},
+        {"sport": "Table Tennis", "facility": "6 tables (Indoor Sports Hall)"},
+        {"sport": "Tennis", "facility": "2 hard courts"},
+        {"sport": "Athletics", "facility": "400m synthetic track"},
+        {"sport": "Swimming", "facility": "25m swimming pool (separate timings for boys/girls)"},
+        {"sport": "Gym / Fitness Centre", "facility": "Fully equipped gym (8 AM – 8 PM)"},
+        {"sport": "Chess / Carom", "facility": "Indoor games room"}
+      ],
+      "inter_college_teams": ["Cricket", "Football", "Basketball", "Badminton", "Athletics", "Table Tennis"],
+      "sports_timings": "6:00 AM – 8:00 AM (morning) and 4:00 PM – 7:00 PM (evening)"
+    },
+    "cafeterias": {
+      "main_cafeteria": {
+        "name": "GITS Food Court",
+        "location": "Main Block, Ground Floor",
+        "timings": "7:30 AM – 9:00 PM",
+        "capacity": 500,
+        "menu_type": "Multi-cuisine (South Indian, North Indian, Chinese, Continental, Fast Food)",
+        "average_meal_cost": "INR 60–120"
+      },
+      "department_canteens": [
+        {"name": "Tech Bites (Block A)", "timings": "8:00 AM – 6:00 PM"},
+        {"name": "Mech Mela (Block C)", "timings": "9:00 AM – 5:00 PM"},
+        {"name": "Snack Corner (Library)", "timings": "9:00 AM – 7:00 PM"}
+      ],
+      "hostel_mess": {
+        "breakfast": "7:00 AM – 9:00 AM",
+        "lunch": "12:00 PM – 2:00 PM",
+        "evening_snacks": "5:00 PM – 6:00 PM",
+        "dinner": "7:30 PM – 9:30 PM",
+        "type": "Veg and Non-Veg (separate counters)",
+        "monthly_charge": "INR 3,500 (all meals included)"
+      }
+    },
+    "transport": {
+      "college_buses": {
+        "total_routes": 18,
+        "buses": 22,
+        "coverage": "Entire Greenfield city and neighbouring towns within 40 km",
+        "timing": "Morning pick-up: 7:00 AM – 8:15 AM, Return: 4:30 PM and 6:30 PM",
+        "transport_coordinator": "Mr. Binu Thomas, transport@gits.edu.in, +91-80-1234-5780",
+        "tracking": "Live bus tracking: https://transport.gits.edu.in"
+      },
+      "routes_sample": [
+        {"route": "Route 1", "areas_covered": "City Centre → MG Road → Electronic City → GITS"},
+        {"route": "Route 2", "areas_covered": "Whitefield → Marathahalli → Sarjapur → GITS"},
+        {"route": "Route 3", "areas_covered": "Bannerghatta Road → JP Nagar → Jayanagar → GITS"},
+        {"route": "Route 4", "areas_covered": "Yelahanka → Hebbal → Nagawara → GITS"},
+        {"route": "Route 5", "areas_covered": "Rajajinagar → Malleshwaram → Yeshwanthpur → GITS"}
+      ]
+    },
+    "it_services": {
+      "student_email": "Format: usn@gits.edu.in (e.g., 2022cse045@gits.edu.in)",
+      "wifi": {
+        "network_name": "GITS_NET",
+        "password": "Available at IT Helpdesk on presenting ID card (changes every semester)",
+        "speed": "100 Mbps per user (1 Gbps backbone)",
+        "coverage": "Entire campus including hostel rooms",
+        "it_helpdesk_email": "ithelpdesk@gits.edu.in",
+        "it_helpdesk_phone": "+91-80-1234-5790",
+        "it_helpdesk_location": "Block A, Room G-05",
+        "timings": "Monday–Friday: 8:30 AM – 6:00 PM"
+      },
+      "software_licenses": ["Microsoft Office 365 (free for all students)", "MATLAB", "AutoCAD (ECE/Mech)", "Ansys", "Cisco Packet Tracer", "GitHub Student Pack"],
+      "lms": {
+        "name": "GITS Learn (Moodle-based)",
+        "url": "https://lms.gits.edu.in",
+        "features": ["Course materials upload", "Assignment submission", "Quiz and assessments", "Video lectures", "Announcements", "Discussion forums"]
+      },
+      "erp_portal": {
+        "url": "https://erp.gits.edu.in",
+        "features": ["Attendance tracking", "Fee payment", "Timetable", "Results", "Course registration", "Leave applications", "Grievance submission", "Library OPAC"]
+      }
+    }
+  }
+}

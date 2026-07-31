@@ -1,0 +1,154 @@
+{
+  "faq": [
+    {
+      "id": "F001",
+      "category": "Attendance",
+      "question": "What is the minimum attendance required to appear for the end-semester exam?",
+      "answer": "The minimum required attendance is 75%. Students with 65%–74% may apply for condonation with a valid medical certificate, subject to HOD and Principal approval. Students with less than 65% will be detained (W grade) and will not be allowed to sit for the exam."
+    },
+    {
+      "id": "F002",
+      "category": "Attendance",
+      "question": "How can I check my attendance?",
+      "answer": "Your attendance is updated daily by 5 PM on the ERP portal. Log in at https://erp.gits.edu.in with your student ID and password to view subject-wise attendance. You will also receive an SMS and email alert when your attendance drops below 80%."
+    },
+    {
+      "id": "F003",
+      "category": "Fees",
+      "question": "When is the fee payment due for the current semester?",
+      "answer": "For the Odd Semester 2025-26, the fee due date is July 31, 2025 (1st installment). For the Even Semester, the due date is December 20, 2025. Late payment attracts a penalty of INR 50/day for the first week, INR 100/day for the second week, and INR 200/day thereafter."
+    },
+    {
+      "id": "F004",
+      "category": "Fees",
+      "question": "How can I pay my college fees?",
+      "answer": "Fees can be paid via: (1) Online Payment Portal at https://pay.gits.edu.in using Net Banking, UPI (no surcharge), or Card (2% surcharge). (2) NEFT/RTGS to the college bank account (details on portal). (3) Demand Draft in favour of 'GITS Greenfield'. (4) Cash up to INR 5000 at the Finance Office."
+    },
+    {
+      "id": "F005",
+      "category": "Grades / GPA",
+      "question": "How is CGPA calculated?",
+      "answer": "CGPA = Σ(Grade Points × Credits for ALL completed semesters) ÷ Σ(Total Credits earned). Grade points range from 0 (F) to 10 (O). For example, if you earned Grade A (8 grade points) in a 4-credit subject, that contributes 32 credit points. To convert CGPA to percentage: Percentage = (CGPA × 10) – 7.5 (approximate)."
+    },
+    {
+      "id": "F006",
+      "category": "Grades / GPA",
+      "question": "What is the minimum CGPA required to pass?",
+      "answer": "The minimum passing CGPA is 4.0 on a 10-point scale. Individually, each subject requires a minimum of Grade P (40-44 marks, 4 grade points) to pass. Students with CGPA below 4.0 are not eligible for the degree."
+    },
+    {
+      "id": "F007",
+      "category": "Exams",
+      "question": "When will the end-semester exam results be declared?",
+      "answer": "Results for the Odd Semester (Dec 2025 exams) will be declared by January 10, 2026. Results for the Even Semester (April-May 2026 exams) will be declared by June 5, 2026. Results are published on the ERP portal."
+    },
+    {
+      "id": "F008",
+      "category": "Exams",
+      "question": "How do I apply for revaluation of my exam paper?",
+      "answer": "Submit the Revaluation Request Form (ACAD-004) at the Exam Cell within 15 days of result declaration. The fee is INR 750 per subject for revaluation and INR 300 for recounting. You must submit your original marks card or provisional statement along with the fee receipt."
+    },
+    {
+      "id": "F009",
+      "category": "Exams",
+      "question": "I have a backlog. What are my options?",
+      "answer": "Students with backlogs can appear for backlog (supplementary) exams conducted each semester. You can register at the Exam Cell upon notification. The fee is INR 500 per subject. You have N+2 years (8+2=10 years for a 4-year program) to clear all backlogs. More than 4 active backlogs may prevent promotion to the next year."
+    },
+    {
+      "id": "F010",
+      "category": "Scholarships",
+      "question": "How do I apply for the National Scholarship?",
+      "answer": "Apply on the National Scholarship Portal (scholarships.gov.in). You need your Aadhaar card, student bank account details, 12th marks card, income certificate, and a bonafide certificate from college (available on the ERP portal instantly). Deadline is typically October 31. Contact the Student Affairs Office (studentaffairs@gits.edu.in) for assistance."
+    },
+    {
+      "id": "F011",
+      "category": "Hostel",
+      "question": "What are the hostel curfew timings?",
+      "answer": "Boys' Hostel: 10:30 PM on weekdays, 11:00 PM on weekends. Girls' Hostel: 9:30 PM on weekdays, 10:00 PM on weekends. Late entry without valid reason attracts a fine of INR 100 per occurrence; three offenses may result in hostel expulsion."
+    },
+    {
+      "id": "F012",
+      "category": "Hostel",
+      "question": "Can I go home on weekends from the hostel?",
+      "answer": "Yes. You must fill out a Hostel Leave Pass/Outing Pass (Form HST-003) available at the Block Warden's office or ERP portal. Parent/guardian approval is required (via portal or signed slip). Submit at least 2 hours before departure and sign the hostel leave register."
+    },
+    {
+      "id": "F013",
+      "category": "Placement",
+      "question": "What is the CGPA requirement for campus placements?",
+      "answer": "The general minimum CGPA is 6.0 with no active backlogs. However, individual companies set their own criteria which may be stricter (e.g., 7.0 or higher for some top recruiters). Always check the specific company drive notice on the placement portal."
+    },
+    {
+      "id": "F014",
+      "category": "Placement",
+      "question": "What was the highest package offered in 2023-24?",
+      "answer": "The highest package in the 2023-24 placement season was INR 42 LPA. The average package was INR 8.6 LPA and the median was INR 7.2 LPA. A total of 892 students were placed through campus recruitment."
+    },
+    {
+      "id": "F015",
+      "category": "Library",
+      "question": "How many books can I borrow from the library?",
+      "answer": "UG students can borrow up to 3 books for 14 days. PG students can borrow up to 5 books for 21 days. PhD students can borrow up to 8 books for 30 days. Late returns attract a fine of INR 2/day per book."
+    },
+    {
+      "id": "F016",
+      "category": "Certificates",
+      "question": "How do I get a bonafide certificate?",
+      "answer": "Bonafide certificates can be generated instantly online through the ERP portal at https://erp.gits.edu.in under 'Certificates'. It is digitally signed and valid for official purposes including bank loans, passport, visa, and scholarship applications. Physical copies with registrar's seal are available from the Academic Section (same day)."
+    },
+    {
+      "id": "F017",
+      "category": "Transfer / Migration",
+      "question": "How do I get a migration or transfer certificate?",
+      "answer": "Apply for Migration Certificate (Form ACAD-009) at the Registrar's Office. You will need the admission proof from your new institution and a No-dues certificate from all departments. The fee is INR 1000 and processing takes about 7 working days."
+    },
+    {
+      "id": "F018",
+      "category": "Wi-Fi",
+      "question": "How do I connect to campus Wi-Fi?",
+      "answer": "Connect to the 'GITS_NET' network. The semester password is available from the IT Helpdesk (Block A, Room G-05) on presenting your student ID card. For issues, contact ithelpdesk@gits.edu.in or call +91-80-1234-5790."
+    },
+    {
+      "id": "F019",
+      "category": "Academic",
+      "question": "When is the last date to register for courses this semester?",
+      "answer": "Course registration must be completed within the first 10 days of the semester (by August 13, 2025 for Odd Sem 2025-26). Add/drop changes are allowed up to 20 days from the start (by August 23, 2025). Register on the ERP portal."
+    },
+    {
+      "id": "F020",
+      "category": "Ragging",
+      "question": "What should I do if I experience or witness ragging?",
+      "answer": "Report immediately to: (1) UGC Anti-Ragging Helpline: 1800-180-5522 (free), (2) College Anti-Ragging Committee: antiragging@gits.edu.in, (3) Anonymous complaint box at Main Block Reception or Hostel Office, (4) Online: https://www.gits.edu.in/anti-ragging. Your identity will be kept strictly confidential. Ragging is a criminal offense and offenders face expulsion and prosecution."
+    },
+    {
+      "id": "F021",
+      "category": "Mental Health",
+      "question": "Is there a counselling service available on campus?",
+      "answer": "Yes! The GITS Student Counselling Centre is located in Main Block, Room 12. The counsellor, Ms. Nandini Bose (M.Phil Clinical Psychology), is available on Mondays, Wednesdays, and Fridays from 10:00 AM – 4:00 PM. Sessions are completely confidential. Book an appointment at https://erp.gits.edu.in/counselling-appointment or email counselling@gits.edu.in. For emergency mental health support: iCall TISS helpline: 9152987821."
+    },
+    {
+      "id": "F022",
+      "category": "Dress Code",
+      "question": "What is the dress code for college?",
+      "answer": "Boys: Plain formal shirt (white/light colours) with dark trousers and closed shoes. Girls: Salwar kameez/Kurta with dupatta, or formal shirt and trousers. Torn or excessively tight clothing is not allowed. College T-shirts may be worn on Saturdays. Exception days (events, cultural fests) are announced in advance."
+    },
+    {
+      "id": "F023",
+      "category": "Internship",
+      "question": "Is an internship mandatory?",
+      "answer": "Yes. A mandatory 8-week Industry/Research Internship is required in Semester 6 (for UG students), carrying 2 credits. You must submit an internship report and completion certificate. Self-arranged internships require prior NOC from TPC and HOD. Summer internships after Semester 4 or 6 are encouraged but optional."
+    },
+    {
+      "id": "F024",
+      "category": "Transport",
+      "question": "Does the college provide bus transport?",
+      "answer": "Yes. GITS operates 22 buses on 18 routes covering Greenfield city and neighbouring towns within 40 km. Morning pick-up is between 7:00 AM – 8:15 AM and return trips are at 4:30 PM and 6:30 PM. Track live bus location at https://transport.gits.edu.in. Contact transport@gits.edu.in for route details."
+    },
+    {
+      "id": "F025",
+      "category": "Events",
+      "question": "What are the major college events this academic year?",
+      "answer": "Major events in 2025-26 include: VELOCITY Sports Meet (Jan 23-25), TECHNOVA Tech Fest (Feb 20-22), E-Summit (Feb), Industry-Academia Summit (Feb 6), CodeStorm Hackathon (Mar 7-8), SANSKRITI Cultural Fest (Mar 14-16), and Alumni Homecoming Day (Oct 4). Check the notice board, ERP portal, and college social media for updates."
+    }
+  ]
+}

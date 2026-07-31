@@ -1,0 +1,126 @@
+{
+  "rules_and_regulations": {
+    "code_of_conduct": {
+      "title": "Student Code of Conduct – GITS",
+      "effective_date": "2025-08-01",
+      "version": "2025 Edition",
+      "preamble": "All students enrolled at GITS are expected to uphold the values of academic integrity, mutual respect, and responsible citizenship. Violations of this code may result in disciplinary action.",
+      "general_conduct_rules": [
+        "Students must carry their GITS ID card at all times on campus.",
+        "Students must adhere to the prescribed dress code during academic hours.",
+        "Ragging in any form – physical, verbal, or online – is strictly prohibited and is a cognizable offense under law.",
+        "Use of tobacco, alcohol, or any intoxicating substances is strictly forbidden on campus and in hostels.",
+        "Gambling in any form is prohibited.",
+        "Students must not engage in any political activity, demonstration, or strike on campus without prior written permission.",
+        "Damage to college property will be penalized with a fine equal to the replacement cost plus 25%.",
+        "Students must not loiter in corridors during class hours.",
+        "Students must switch off or silence mobile phones during lectures, labs, and examinations.",
+        "Students must maintain decorum and dignity in all interactions with faculty, staff, and fellow students.",
+        "Cyberbullying, harassment via social media, or any form of online misconduct related to the college community is punishable.",
+        "Students must not solicit donations or conduct sales/promotions on campus without permission.",
+        "Use of unfair means during exams will be treated as malpractice per UGC and university guidelines.",
+        "Students must report any suspicious activity or safety concerns to the security office or their HOD immediately.",
+        "Any media interaction (interviews, press releases) on behalf of the college requires prior written approval from the Principal's office."
+      ],
+      "dress_code": {
+        "boys": {
+          "weekdays": "Plain formal shirt (white/light colours), dark trousers, closed shoes",
+          "lab_days": "Same as above; open footwear not permitted inside labs",
+          "exceptions": "Cultural event days as announced; sports gear in sports complex"
+        },
+        "girls": {
+          "weekdays": "Salwar kameez / Kurta with dupatta, or formals (shirt + trouser). Churidar with dupatta is also acceptable.",
+          "footwear": "Sandals or formal shoes permitted",
+          "exceptions": "Cultural event days as announced"
+        },
+        "general": [
+          "Torn or excessively tight clothing is not allowed",
+          "College T-shirts and sweatshirts may be worn on Saturdays",
+          "Sports kit permitted only in the sports complex and designated areas"
+        ]
+      },
+      "mobile_phone_policy": {
+        "in_classrooms": "Strictly not allowed to use during class. Must be kept on silent/vibrate.",
+        "in_labs": "Not allowed unless the experiment requires it and faculty has explicitly permitted.",
+        "in_library": "Calls are prohibited; can be used in silent mode for research purposes.",
+        "during_exams": "Absolutely prohibited. Possession alone is treated as malpractice.",
+        "campus_photography": "Photography/video of classrooms, labs, or administrative areas requires prior permission."
+      },
+      "anti_ragging_policy": {
+        "definition": "Ragging means any act that causes or is likely to cause physical or psychological harm to a fresher or junior student.",
+        "zero_tolerance": true,
+        "anti_ragging_committee": "Chaired by Principal; includes faculty, students, and external members",
+        "complaint_mechanism": [
+          "Anti-Ragging Helpline: 1800-180-5522 (UGC National Helpline)",
+          "College Anti-Ragging Committee email: antiragging@gits.edu.in",
+          "Anonymous complaint box at: Main Block Reception, Hostel Office",
+          "Online: https://www.gits.edu.in/anti-ragging"
+        ],
+        "punishment_range": [
+          "Cancellation of admission",
+          "Suspension from college",
+          "Withholding of results",
+          "Expulsion and debarment from other institutions",
+          "FIR and criminal prosecution"
+        ]
+      },
+      "sexual_harassment_policy": {
+        "iqac_complaint_committee": "Internal Complaints Committee (ICC) as per POSH Act 2013",
+        "icc_chair": "Dr. Meena Chandrasekhar (Dean, Student Affairs)",
+        "complaint_email": "icc@gits.edu.in",
+        "procedure": "Submit written complaint to ICC within 3 months of incident. ICC will investigate and submit report within 90 days."
+      }
+    },
+    "academic_rules": {
+      "promotion_criteria": {
+        "year_1_to_2": "Must pass all year 1 subjects OR have not more than 4 arrears",
+        "year_2_to_3": "Must pass all year 1 subjects and have not more than 4 arrears from year 2",
+        "year_3_to_4": "Must pass all year 1 and 2 subjects; max 4 arrears from year 3",
+        "final_year_completion": "All 160 credits must be earned with CGPA >= 4.0"
+      },
+      "leave_policy": {
+        "medical_leave": "Submit medical certificate from MBBS registered doctor within 3 days of return",
+        "prior_leave": "Application to HOD at least 3 working days in advance",
+        "maximum_leave_per_semester": "Not more than 15 days (beyond which attendance falls below 75%)",
+        "application_form": "Form available on portal: https://erp.gits.edu.in/leave"
+      },
+      "plagiarism_policy": {
+        "threshold": "Similarity index above 20% in assignments/reports is treated as plagiarism",
+        "tool_used": "Turnitin",
+        "first_offense": "Zero marks for the assignment; written warning",
+        "second_offense": "Zero marks for all internal assessments in that subject",
+        "third_offense": "Disciplinary action including possible suspension"
+      },
+      "project_guidelines": {
+        "mini_project": "Semester 5 – team of 2-3 students; must be domain-relevant",
+        "main_project": "Semester 7-8 – team of 3-4 students; industry-standard documentation required",
+        "project_report_format": "As per GITS guidelines available on LMS",
+        "guide_allocation": "Assigned by HOD based on area of interest",
+        "project_review_schedule": ["Week 4: Problem definition review", "Week 8: Progress review", "Week 14: Final demo and viva"]
+      }
+    },
+    "hostel_rules": {
+      "curfew_timings": {
+        "boys_hostel": "10:30 PM on weekdays, 11:00 PM on weekends",
+        "girls_hostel": "9:30 PM on weekdays, 10:00 PM on weekends"
+      },
+      "visitor_policy": {
+        "allowed_days": "Sundays: 10:00 AM – 5:00 PM",
+        "visitors": "Only parents/guardians (prior registration required at hostel office)",
+        "opposite_gender": "Not allowed in residential blocks"
+      },
+      "hostel_rules_list": [
+        "Maintain silence in corridors between 10:00 PM – 6:00 AM.",
+        "Cooking using electrical appliances (heaters, induction, etc.) is prohibited except in designated cooking areas.",
+        "Illegal possession of alcohol, tobacco, or drugs leads to immediate expulsion from hostel.",
+        "Any vehicle parked in hostel premises must be registered with the transport office.",
+        "Keep rooms clean and tidy; room inspection will be conducted fortnightly.",
+        "Electrical fittings must not be tampered with.",
+        "Leave the hostel premises only after signing the hostel leave register.",
+        "Late entry without valid reason: INR 100 fine per occurrence; 3rd offense leads to hostel expulsion.",
+        "Wi-Fi is provided from 6:00 AM – 11:00 PM (extended on exam request).",
+        "Power cuts for study: 11:00 PM; emergency lights remain on."
+      ]
+    }
+  }
+}

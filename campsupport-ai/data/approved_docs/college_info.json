@@ -1,0 +1,57 @@
+{
+  "college": {
+    "name": "Greenfield Institute of Technology and Sciences (GITS)",
+    "abbreviation": "GITS",
+    "established": 1998,
+    "type": "Private Autonomous Institution",
+    "affiliation": "Greenfield State University (GSU)",
+    "accreditation": ["NAAC A+", "NBA", "NIRF Rank 85", "ISO 9001:2015"],
+    "address": {
+      "street": "123, Knowledge Park, Tech Boulevard",
+      "city": "Greenfield",
+      "state": "Karnataka",
+      "pincode": "560001",
+      "country": "India"
+    },
+    "contact": {
+      "main_phone": "+91-80-1234-5678",
+      "toll_free": "1800-123-4567",
+      "fax": "+91-80-1234-5679",
+      "email": "info@gits.edu.in",
+      "admissions_email": "admissions@gits.edu.in",
+      "helpdesk_email": "helpdesk@gits.edu.in",
+      "website": "https://www.gits.edu.in",
+      "student_portal": "https://portal.gits.edu.in",
+      "lms": "https://lms.gits.edu.in",
+      "erp": "https://erp.gits.edu.in"
+    },
+    "social_media": {
+      "facebook": "https://facebook.com/gits.official",
+      "instagram": "@gits_official",
+      "twitter": "@GITS_India",
+      "linkedin": "company/greenfield-institute-of-technology",
+      "youtube": "GITS Official"
+    },
+    "campus": {
+      "area_acres": 120,
+      "hostels": true,
+      "boys_hostels": 4,
+      "girls_hostels": 3,
+      "cafeterias": 5,
+      "sports_complex": true,
+      "library": true,
+      "medical_centre": true,
+      "bank_atm": true,
+      "wifi": "Campus-wide Wi-Fi (GITS_NET) – 1 Gbps backbone"
+    },
+    "mission": "To provide world-class education that nurtures innovative thinkers, ethical leaders, and skilled professionals who contribute meaningfully to society.",
+    "vision": "To be a globally recognized institution of excellence in education, research, and innovation by 2035.",
+    "values": ["Academic Excellence", "Integrity and Ethics", "Innovation and Creativity", "Inclusivity and Diversity", "Community Service"],
+    "working_hours": {
+      "administrative_office": "Monday–Friday: 9:00 AM – 5:00 PM, Saturday: 9:00 AM – 1:00 PM",
+      "library": "Monday–Saturday: 8:00 AM – 10:00 PM, Sunday: 10:00 AM – 6:00 PM",
+      "helpdesk": "Monday–Friday: 8:30 AM – 6:00 PM",
+      "medical_centre": "24/7 (Emergency), Regular: 9:00 AM – 5:00 PM"
+    }
+  }
+}
