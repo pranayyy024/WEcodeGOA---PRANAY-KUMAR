@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { AdminDashboard } from '../../components/AdminDashboard';
+import { AttendanceDashboard } from '../../components/AttendanceDashboard';
 
-export default function AdminPage() {
-  const [role, setRole] = useState<'STUDENT' | 'TEACHER'>('TEACHER');
+export default function AttendancePage() {
+  const [role, setRole] = useState<'STUDENT' | 'TEACHER'>('STUDENT');
   const [collegeId, setCollegeId] = useState<string>('GEC');
 
   useEffect(() => {
@@ -30,8 +30,8 @@ export default function AdminPage() {
   }, []);
 
   return (
-    <section aria-label="Campus Administration RAG Dashboard" className="w-full">
-      <AdminDashboard role={role} collegeId={collegeId} />
+    <section aria-label="Campus Student Attendance Portal" className="w-full">
+      <AttendanceDashboard role={role} collegeId={collegeId} />
     </section>
   );
 }
