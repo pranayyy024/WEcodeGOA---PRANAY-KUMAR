@@ -36,7 +36,15 @@ class TestCampSupportBackend(unittest.TestCase):
         self.assertEqual(response.department_routed, "Campus IT")
         self.assertIn("#TICK-", response.ticket_created["ticket_id"])
 
-    def test_05_api_chat_endpoint(self):
+    def test_05_semantic_internet_access_query(self):
+        """Verify semantic intent such as 'internet access' resolves to the Wi-Fi policy document."""
+        response = run_campus_agent(query="How can I access the internet on campus?")
+        self.assertGreater(response.confidence_score, 0.4)
+        self.assertTrue(len(response.citations) > 0)
+        self.assertEqual(response.citations[0].source_document, "wifi_email_sop.txt")
+        self.assertFalse(response.requires_follow_up)
+
+    def test_06_api_chat_endpoint(self):
         """Test POST /api/v1/chat API endpoint."""
         payload = {
             "message": "What is the minimum attendance required for semester exams?",

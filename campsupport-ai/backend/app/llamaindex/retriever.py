@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from typing import List, Tuple, Dict, Any
 from app.core.config import settings
+from app.db.semantic_search import SemanticSearchProvider
 from app.schemas.chat import CitationSchema
 
 try:
@@ -23,6 +24,7 @@ class CampusRAGRetriever:
     def __init__(self, docs_path: str = settings.APPROVED_DOCS_PATH):
         self.docs_path = Path(docs_path)
         self._documents: List[Dict[str, str]] = []
+        self._semantic_provider = SemanticSearchProvider(provider_name="hybrid")
         self._load_local_docs()
 
     def _load_local_docs(self):
@@ -67,30 +69,9 @@ class CampusRAGRetriever:
         if not query_terms:
             return [], 0.0
 
-        scored_chunks: List[Tuple[float, str, str]] = []
-
-        for doc in self._documents:
-            source = doc["source"]
-            content = doc["content"]
-            sections = [s.strip() for s in content.split("\n\n") if len(s.strip()) > 20]
-
-            for section in sections:
-                section_lower = section.lower()
-                matches = sum(1 for term in query_terms if term in section_lower)
-                boost = 0.0
-                if any(w in section_lower for w in ["wifi", "wi-fi", "eduroam"]) and any(w in query.lower() for w in ["wifi", "wi-fi", "eduroam"]):
-                    boost += 0.35
-                if any(w in section_lower for w in ["attendance", "admit card"]) and any(w in query.lower() for w in ["attendance", "admit card"]):
-                    boost += 0.45
-                if any(w in section_lower for w in ["hostel", "curfew", "warden"]) and any(w in query.lower() for w in ["hostel", "curfew", "warden"]):
-                    boost += 0.35
-
-                if matches > 0 or boost > 0:
-                    score = min(0.95, 0.35 + (matches * 0.15) + boost)
-                    scored_chunks.append((score, source, section))
-
-        scored_chunks.sort(key=lambda x: x[0], reverse=True)
-        top_chunks = scored_chunks[:top_k]
+        top_chunks = self._semantic_provider.search(query, self._documents, top_k=top_k)
+        if not top_chunks:
+            return [], 0.0
 
         if not top_chunks:
             return [], 0.0
