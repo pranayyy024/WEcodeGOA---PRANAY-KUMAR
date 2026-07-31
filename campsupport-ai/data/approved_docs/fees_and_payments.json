@@ -1,0 +1,172 @@
+{
+  "fees_structure": {
+    "academic_year": "2025-2026",
+    "note": "All amounts in Indian Rupees (INR). Fees are subject to revision by the Fee Regulatory Committee.",
+    "undergraduate_programs": {
+      "BE_CSE": {
+        "program": "B.E. Computer Science and Engineering",
+        "duration_years": 4,
+        "tuition_fee_per_year": 95000,
+        "other_fees": {
+          "admission_fee_one_time": 5000,
+          "caution_deposit_refundable": 10000,
+          "university_registration_fee": 1500,
+          "library_fee_per_year": 2000,
+          "lab_fee_per_year": 5000,
+          "student_activity_fee_per_year": 1500,
+          "sports_fee_per_year": 1000,
+          "examination_fee_per_semester": 1500,
+          "id_card_fee_one_time": 200,
+          "internet_fee_per_year": 1200,
+          "medical_insurance_per_year": 500,
+          "alumni_fund_one_time": 500,
+          "smart_card_one_time": 200
+        },
+        "total_first_year": 123100,
+        "total_subsequent_year": 107200,
+        "hostel_fees": {
+          "boys_triple_sharing_per_year": 55000,
+          "boys_double_sharing_per_year": 65000,
+          "girls_triple_sharing_per_year": 58000,
+          "girls_double_sharing_per_year": 68000,
+          "mess_charges_per_month": 3500,
+          "hostel_admission_fee_one_time": 2000,
+          "hostel_caution_deposit_refundable": 5000
+        },
+        "transport_fee": {
+          "within_10km_per_year": 12000,
+          "10_to_20km_per_year": 16000,
+          "above_20km_per_year": 20000
+        }
+      },
+      "BE_CSE_AIML": {
+        "program": "B.E. CSE (AI & ML Specialization)",
+        "tuition_fee_per_year": 105000,
+        "other_fees_same_as": "BE_CSE",
+        "total_first_year": 133100
+      },
+      "BE_CSE_DS": {
+        "program": "B.E. CSE (Data Science)",
+        "tuition_fee_per_year": 100000,
+        "other_fees_same_as": "BE_CSE",
+        "total_first_year": 128100
+      },
+      "BE_ECE": {
+        "program": "B.E. Electronics and Communication Engineering",
+        "tuition_fee_per_year": 90000,
+        "total_first_year": 118100
+      },
+      "BE_MECH": {
+        "program": "B.E. Mechanical Engineering",
+        "tuition_fee_per_year": 88000,
+        "total_first_year": 116100
+      },
+      "BE_CIVIL": {
+        "program": "B.E. Civil Engineering",
+        "tuition_fee_per_year": 85000,
+        "total_first_year": 113100
+      },
+      "BE_EEE": {
+        "program": "B.E. Electrical and Electronics Engineering",
+        "tuition_fee_per_year": 88000,
+        "total_first_year": 116100
+      },
+      "BE_IT": {
+        "program": "B.E. Information Technology",
+        "tuition_fee_per_year": 92000,
+        "total_first_year": 120100
+      }
+    },
+    "postgraduate_programs": {
+      "ME_CSE": {
+        "program": "M.E. Computer Science and Engineering",
+        "duration_years": 2,
+        "tuition_fee_per_year": 75000,
+        "admission_fee_one_time": 5000,
+        "total_first_year": 90500
+      },
+      "MBA": {
+        "program": "MBA",
+        "duration_years": 2,
+        "tuition_fee_per_year": 110000,
+        "admission_fee_one_time": 8000,
+        "total_first_year": 128000
+      },
+      "MTech_AIML": {
+        "program": "M.Tech AI & ML",
+        "duration_years": 2,
+        "tuition_fee_per_year": 85000,
+        "admission_fee_one_time": 5000,
+        "total_first_year": 100500
+      }
+    },
+    "payment_schedule": {
+      "semester_1_and_2_first_year": {
+        "installment_1": {"amount_percent": 50, "due_date": "2025-07-15", "description": "First Installment – Semester 1"},
+        "installment_2": {"amount_percent": 50, "due_date": "2025-12-15", "description": "Second Installment – Semester 2"}
+      },
+      "subsequent_years_odd_semester": {
+        "due_date": "2025-07-31",
+        "description": "Full year fee or 1st Installment for Odd Semester"
+      },
+      "subsequent_years_even_semester": {
+        "due_date": "2025-12-20",
+        "description": "2nd Installment for Even Semester"
+      },
+      "hostel_fees": {
+        "installment_1_due": "2025-07-20",
+        "installment_2_due": "2026-01-10"
+      }
+    },
+    "late_fee_penalty": {
+      "first_week_after_due": "INR 50 per day",
+      "second_week_after_due": "INR 100 per day",
+      "after_two_weeks": "INR 200 per day + Principal's permission required",
+      "maximum_late_fee": "INR 5000",
+      "note": "Students with outstanding dues will not be allowed to appear in end-semester examinations or receive hall tickets."
+    },
+    "payment_modes": [
+      "Online Payment Portal (https://pay.gits.edu.in)",
+      "Net Banking (NEFT/RTGS) – Account details on portal",
+      "Debit Card / Credit Card (2% surcharge applies)",
+      "UPI (no surcharge)",
+      "Demand Draft – in favour of 'GITS Greenfield' payable at Greenfield",
+      "Cash payment at Finance Office (up to INR 5000 only)"
+    ],
+    "refund_policy": {
+      "withdrawal_before_course_start": "100% tuition fee refunded (admin fee non-refundable)",
+      "withdrawal_within_30_days_of_joining": "75% tuition fee refunded",
+      "withdrawal_within_30_to_90_days": "50% tuition fee refunded",
+      "withdrawal_after_90_days": "No refund",
+      "caution_deposit": "Fully refunded after course completion and clearance certificate",
+      "note": "Refund process takes 30-45 working days"
+    },
+    "scholarships_and_waivers": {
+      "merit_scholarship": {
+        "criteria": "12th grade marks >= 90%",
+        "waiver": "25% of tuition fee for 1st year, extendable based on CGPA >= 8.5"
+      },
+      "sports_quota": {
+        "criteria": "National/State level sports achievement",
+        "waiver": "50% of tuition fee"
+      },
+      "staff_ward": {
+        "criteria": "Ward of GITS faculty/staff",
+        "waiver": "30% of tuition fee"
+      },
+      "sibling_concession": {
+        "criteria": "Sibling currently enrolled at GITS",
+        "waiver": "10% of tuition fee"
+      },
+      "government_scholarships": [
+        "SC/ST Scholarship (Government of Karnataka)",
+        "OBC Scholarship",
+        "Post-Matric Scholarship",
+        "Central Sector Scholarship",
+        "NSP – National Scholarship Portal",
+        "Minority Scholarship",
+        "AICTE PG Scholarship for GATE Qualified"
+      ]
+    }
+  }
+}

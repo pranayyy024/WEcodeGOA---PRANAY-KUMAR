@@ -1,0 +1,74 @@
+{
+  "admissions": {
+    "undergraduate": {
+      "eligibility": {
+        "engineering_BE": {
+          "qualification": "10+2 or equivalent with Physics, Mathematics as compulsory subjects",
+          "minimum_marks": "50% aggregate in PCM (Physics, Chemistry, Mathematics); 45% for SC/ST",
+          "entrance_exams_considered": ["KCET (Karnataka CET)", "JEE Main", "COMEDK UGET", "GITS Direct Admission (based on merit)"],
+          "age": "Minimum 17 years as on December 31 of admission year"
+        },
+        "lateral_entry_BE": {
+          "qualification": "3-year Diploma in Engineering (relevant branch) OR B.Sc. with Mathematics",
+          "minimum_marks": "50% in Diploma",
+          "entrance_exam": "DCET (Diploma CET) or GITS Lateral Entry Test",
+          "admission_to": "Direct admission to 2nd year (Semester 3)"
+        }
+      },
+      "intake_seats": {
+        "government_quota": "45%",
+        "management_quota": "35%",
+        "nri_quota": "15%",
+        "minority_quota": "5%"
+      },
+      "admission_process": [
+        "Step 1: Apply online at https://www.gits.edu.in/admissions",
+        "Step 2: Upload required documents",
+        "Step 3: Rank card / Merit verification by admissions office",
+        "Step 4: Counselling and seat allotment",
+        "Step 5: Payment of admission fee (within 3 days of allotment to confirm seat)",
+        "Step 6: Document verification (physical) and ID card issuance",
+        "Step 7: Orientation program (August 1)"
+      ],
+      "documents_required_admission": [
+        "10th marks card and pass certificate",
+        "11th and 12th marks cards",
+        "12th pass certificate / provisional certificate",
+        "KCET / JEE / COMEDK rank card",
+        "Transfer certificate from previous institution",
+        "Conduct certificate",
+        "Aadhaar card",
+        "Caste / category certificate (if applicable)",
+        "Income certificate (for scholarship/fee concession)",
+        "Migration certificate (if from other state board)",
+        "4 recent passport-size photographs",
+        "Medical fitness certificate"
+      ]
+    },
+    "postgraduate": {
+      "ME_MSE_eligibility": {
+        "qualification": "B.E./B.Tech in relevant branch with minimum 50% marks",
+        "entrance": "GATE score preferred; non-GATE students may be admitted based on merit and interview",
+        "note": "GATE qualified students eligible for AICTE scholarship of INR 12,400/month"
+      },
+      "MBA_eligibility": {
+        "qualification": "Any bachelor's degree (minimum 3 years) with 50% marks",
+        "entrance": "CAT / MAT / XAT / CMAT / GITS MBA Entrance Test",
+        "selection": "Entrance score (40%) + Group Discussion (30%) + Interview (30%)"
+      }
+    },
+    "phd_program": {
+      "eligibility": "Relevant master's degree with 55% marks; GATE / NET / SET preferred",
+      "admission_schedule": "Twice a year – June and December",
+      "areas_available": ["Computer Science", "Electronics", "Mechanical", "Civil", "AI & ML"],
+      "contact": "phd.admissions@gits.edu.in",
+      "guide_list": "Available at https://www.gits.edu.in/phd-guides"
+    },
+    "nri_and_foreign_students": {
+      "quota": "15% of seats (Engineering programs)",
+      "fee_USD_per_year": 5000,
+      "contact": "international@gits.edu.in",
+      "documents_extra": ["Passport copy", "Visa copy", "Equivalent certificate from Association of Indian Universities (AIU)"]
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "dataset_meta": {
+    "name": "GITS Campus AI Helpdesk Dataset",
+    "version": "1.0.0",
+    "created": "2025-07-31",
+    "description": "Comprehensive structured dataset for powering the GITS Campus AI Helpdesk chatbot. Contains all college information required to answer student, parent, and staff queries.",
+    "college": "Greenfield Institute of Technology and Sciences (GITS)",
+    "files": [
+      {
+        "filename": "college_info.json",
+        "description": "Core college details: name, address, contacts, website, campus info, mission, vision, working hours",
+        "key_topics": ["contact info", "address", "website", "social media", "working hours", "mission", "vision", "accreditation"]
+      },
+      {
+        "filename": "departments.json",
+        "description": "All academic departments with HOD details, programs offered, intake, faculty count, labs, emails",
+        "key_topics": ["department", "HOD", "programs", "courses offered", "faculty", "labs", "email", "phone"]
+      },
+      {
+        "filename": "academic_calendar.json",
+        "description": "Academic year 2025-26 calendar: semester dates, holidays, events, registration deadlines",
+        "key_topics": ["semester dates", "exam dates", "holidays", "events", "registration deadline", "results date", "orientation"]
+      },
+      {
+        "filename": "fees_and_payments.json",
+        "description": "Complete fee structure for all programs, payment schedule, late fee policy, refund policy, scholarships and waivers",
+        "key_topics": ["tuition fee", "hostel fee", "payment due date", "late fee", "refund", "scholarship", "fee structure", "transport fee", "caution deposit"]
+      },
+      {
+        "filename": "grading_and_student_records.json",
+        "description": "Grading system, GPA calculation, attendance rules, internal assessment, exam rules, backlog policy, sample student record",
+        "key_topics": ["CGPA", "SGPA", "GPA", "grades", "attendance", "exam rules", "malpractice", "revaluation", "backlogs", "marks", "student record"]
+      },
+      {
+        "filename": "syllabus_cse.json",
+        "description": "Detailed syllabus for B.E. CSE (Regulation 2022) for Semesters 1 and 3, with unit-wise topics, lab programs, and reference books",
+        "key_topics": ["syllabus", "subjects", "course content", "lab programs", "reference books", "units", "curriculum"]
+      },
+      {
+        "filename": "rules_and_regulations.json",
+        "description": "Student code of conduct, dress code, mobile phone policy, anti-ragging, sexual harassment (POSH), academic rules, hostel rules",
+        "key_topics": ["rules", "conduct", "dress code", "ragging", "hostel rules", "plagiarism", "leave policy", "discipline"]
+      },
+      {
+        "filename": "timetable.json",
+        "description": "Weekly class timetable for CSE Sem 3 Section A, period timings, and end-semester exam timetable",
+        "key_topics": ["timetable", "class schedule", "period timings", "exam schedule", "lab timings"]
+      },
+      {
+        "filename": "forms_and_applications.json",
+        "description": "Complete catalog of all forms with form ID, purpose, submission, deadlines, required documents, and fees",
+        "key_topics": ["forms", "applications", "bonafide", "NOC", "revaluation", "migration", "scholarship form", "hostel form", "leave form", "grievance"]
+      },
+      {
+        "filename": "schemes_and_financial_aid.json",
+        "description": "Government scholarships, college internal schemes, education loan partners, student insurance",
+        "key_topics": ["scholarship", "financial aid", "education loan", "bank loan", "Pragati", "AICTE", "NSP", "SSP", "insurance", "fee waiver"]
+      },
+      {
+        "filename": "placement_and_careers.json",
+        "description": "Placement statistics, process, eligibility, pre-placement training, internship policy, higher education guidance",
+        "key_topics": ["placement", "job", "package", "LPA", "companies", "campus recruitment", "internship", "GATE", "GRE", "career"]
+      },
+      {
+        "filename": "facilities_and_services.json",
+        "description": "Library, medical centre, counselling, sports complex, cafeterias, transport, IT services (Wi-Fi, software, LMS, ERP)",
+        "key_topics": ["library", "medical", "counselling", "sports", "cafeteria", "bus", "transport", "wifi", "software", "LMS", "ERP", "portal"]
+      },
+      {
+        "filename": "clubs_and_organizations.json",
+        "description": "All student clubs, NSS, NCC, student council with meeting schedules and activities",
+        "key_topics": ["clubs", "activities", "NSS", "NCC", "IEEE", "coding club", "cultural", "sports", "student council", "events"]
+      },
+      {
+        "filename": "admissions.json",
+        "description": "Admission eligibility, process, documents required, quota breakdown, PG/PhD programs, NRI admissions",
+        "key_topics": ["admission", "eligibility", "documents", "KCET", "JEE", "COMEDK", "lateral entry", "quota", "NRI", "PhD"]
+      },
+      {
+        "filename": "faq.json",
+        "description": "25 curated FAQs covering the most common student queries across all categories",
+        "key_topics": ["FAQ", "questions", "common queries", "attendance", "fees", "exams", "hostel", "placement", "wifi", "ragging", "counselling"]
+      }
+    ],
+    "chatbot_integration_notes": {
+      "recommended_vector_fields": [
+        "question + answer (for FAQ)",
+        "form name + purpose + documents_required",
+        "event name + date + description",
+        "subject name + syllabus_units topics",
+        "rule text",
+        "scholarship name + eligibility + amount"
+      ],
+      "suggested_intent_categories": [
+        "attendance_query",
+        "fee_payment",
+        "exam_schedule",
+        "result_inquiry",
+        "scholarship_application",
+        "hostel_query",
+        "placement_query",
+        "timetable_query",
+        "certificate_request",
+        "form_request",
+        "club_activity",
+        "event_information",
+        "transport_query",
+        "wifi_support",
+        "medical_emergency",
+        "counselling_request",
+        "ragging_complaint",
+        "grievance_filing",
+        "admission_inquiry",
+        "syllabus_query",
+        "grade_calculation",
+        "general_information"
+      ],
+      "student_entity_types": [
+        "student_id",
+        "student_name",
+        "department",
+        "semester",
+        "section",
+        "batch_year",
+        "cgpa",
+        "subject_code",
+        "subject_name",
+        "form_id"
+      ]
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemes_and_financial_aid": {
+    "government_scholarships": [
+      {
+        "name": "National Scholarship Portal (NSP) – Central Sector Scheme",
+        "eligibility": "Family income below INR 4.5 lakh/year; scored above 80% in 12th; fresh undergraduate",
+        "amount": "INR 10,000/year for professional courses",
+        "how_to_apply": "Register at scholarships.gov.in with Aadhaar; select Central Sector Scheme",
+        "documents": ["Aadhaar card", "Bank account (student)", "12th marks card", "Income certificate from revenue officer", "Caste certificate (if applicable)", "Bonafide certificate from college"],
+        "deadline": "October 31 each year",
+        "renewable": true,
+        "renewal_criteria": "Maintain 60% in previous year"
+      },
+      {
+        "name": "Post-Matric Scholarship – Karnataka Government (SC/ST Students)",
+        "eligibility": "SC/ST students; pursuing post-10th studies; family income below INR 2.5 lakh/year",
+        "amount": "Course fee reimbursement + maintenance allowance",
+        "how_to_apply": "SSP Karnataka Portal (ssp.karnataka.gov.in)",
+        "documents": ["Caste certificate", "Income certificate", "Previous year marks card", "Bank passbook", "Aadhaar", "Bonafide certificate"],
+        "contact_college": "student affairs office for college verification"
+      },
+      {
+        "name": "OBC Post-Matric Scholarship",
+        "eligibility": "OBC category; family income below INR 1 lakh/year",
+        "amount": "Maintenance allowance + course fee (partial)",
+        "how_to_apply": "NSP Portal or SSP Karnataka Portal",
+        "documents": ["OBC certificate", "Income certificate", "Bank account", "Aadhaar"]
+      },
+      {
+        "name": "AICTE PG Scholarship (for GATE/GPAT Qualified Students)",
+        "eligibility": "Students with valid GATE score admitted to M.E./M.Tech at AICTE-approved institution",
+        "amount": "INR 12,400/month for 2 years",
+        "how_to_apply": "Apply through AICTE portal; college forwards application",
+        "contact": "hod.me@gits.edu.in or admissions@gits.edu.in"
+      },
+      {
+        "name": "Prime Minister's Scholarship Scheme (PMSS)",
+        "eligibility": "Wards of ex-servicemen / Coast Guard personnel",
+        "amount": "INR 2,500/month (boys), INR 3,000/month (girls)",
+        "how_to_apply": "DESW (ksb.gov.in)"
+      },
+      {
+        "name": "Minority Scholarship – Maulana Azad National Fellowship",
+        "eligibility": "Minority community students (Muslim, Christian, Sikh, Buddhist, Jain, Zoroastrian); pursuing M.Phil/Ph.D",
+        "amount": "Full financial assistance",
+        "how_to_apply": "UGC online portal"
+      },
+      {
+        "name": "Pragati Scholarship (AICTE) – For Girl Students",
+        "eligibility": "Girl students in AICTE-approved institutions; family income below INR 8 lakh/year; 1 per family",
+        "amount": "INR 50,000/year (tuition, books, incidentals) – 2 scholars per state per program",
+        "how_to_apply": "AICTE portal (aicte-pragati-saksham-gov.in)"
+      },
+      {
+        "name": "Saksham Scholarship (AICTE) – For Differently-abled Students",
+        "eligibility": "Specially-abled students (40% or more disability); pursuing degree/diploma at AICTE institution",
+        "amount": "INR 50,000/year",
+        "how_to_apply": "AICTE portal"
+      }
+    ],
+    "college_internal_schemes": [
+      {
+        "name": "GITS Merit Scholarship",
+        "eligibility": "12th score >= 90% for 1st year; CGPA >= 8.5 for subsequent years",
+        "waiver": "25% of tuition fee",
+        "renewable": true,
+        "apply_to": "Admissions Office during admission or Student Affairs Office (by July 31 each year)"
+      },
+      {
+        "name": "GITS Sports Excellence Award",
+        "eligibility": "National/State-level sports achievements (certificate required)",
+        "waiver": "Up to 50% of tuition fee",
+        "apply_to": "Sports Director + Student Affairs"
+      },
+      {
+        "name": "GITS Need-Based Fee Waiver",
+        "eligibility": "Family income below INR 3 lakh; financial hardship demonstrated",
+        "waiver": "10%–30% of tuition fee based on committee assessment",
+        "apply_to": "Finance Office (committee reviews annually)"
+      },
+      {
+        "name": "GITS Research Fellowship",
+        "eligibility": "M.E. / Ph.D. students engaged in active research; supervisor recommendation",
+        "amount": "INR 8,000/month stipend",
+        "duration": "Up to 2 years"
+      }
+    ],
+    "education_loan_assistance": {
+      "partnered_banks": [
+        {"bank": "State Bank of India", "scheme": "SBI Scholar Loan", "max_amount": "INR 40 lakh", "interest_rate": "8.15% p.a.", "contact": "SBI Branch, Campus"},
+        {"bank": "Bank of Baroda", "scheme": "Baroda Vidya Loan", "max_amount": "INR 40 lakh", "interest_rate": "8.35% p.a."},
+        {"bank": "Canara Bank", "scheme": "Canara Education Loan", "max_amount": "INR 40 lakh", "interest_rate": "8.50% p.a."},
+        {"bank": "HDFC Bank", "scheme": "HDFC Education Loan", "max_amount": "INR 20 lakh (unsecured)", "interest_rate": "10.00% p.a."},
+        {"bank": "Axis Bank", "scheme": "Axis Education Loan", "max_amount": "INR 20 lakh (unsecured)", "interest_rate": "9.70% p.a."}
+      ],
+      "process": "Student approaches bank with bonafide certificate + fee structure + income proof. College finance office provides support letters.",
+      "vidyalaxmi_portal": "vidyalakshmi.co.in – Central portal for education loan applications"
+    },
+    "insurance": {
+      "student_accident_insurance": {
+        "provider": "National Insurance Company",
+        "coverage": "INR 2 lakh per student",
+        "scope": "Death or permanent disability due to accident on or off campus",
+        "premium": "Covered in annual student activity fee",
+        "claim_process": "Contact Student Affairs Office within 30 days of incident with FIR / medical reports"
+      },
+      "health_insurance": {
+        "provider": "New India Assurance",
+        "coverage": "Cashless hospitalisation up to INR 50,000 per year",
+        "eligible_hospitals": "Empanelled hospitals list available at Medical Centre",
+        "premium": "INR 500/year (included in fees)",
+        "claim_contact": "medical@gits.edu.in"
+      }
+    }
+  }
+}

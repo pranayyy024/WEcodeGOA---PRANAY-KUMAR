@@ -1,0 +1,126 @@
+{
+  "academic_calendar": {
+    "academic_year": "2025-2026",
+    "semesters": [
+      {
+        "semester": "Odd Semester (Sem 1, 3, 5, 7)",
+        "start_date": "2025-08-04",
+        "end_date": "2025-11-28",
+        "teaching_weeks": 16,
+        "key_dates": {
+          "orientation_day": "2025-08-01",
+          "classes_begin": "2025-08-04",
+          "internal_assessment_1": "2025-09-08 to 2025-09-13",
+          "internal_assessment_2": "2025-10-20 to 2025-10-25",
+          "last_day_of_instruction": "2025-11-21",
+          "study_holidays": "2025-11-22 to 2025-11-30",
+          "end_semester_exams_begin": "2025-12-01",
+          "end_semester_exams_end": "2025-12-20",
+          "results_declaration": "2026-01-10",
+          "semester_break_start": "2025-12-21",
+          "semester_break_end": "2026-01-03"
+        }
+      },
+      {
+        "semester": "Even Semester (Sem 2, 4, 6, 8)",
+        "start_date": "2026-01-05",
+        "end_date": "2026-04-24",
+        "teaching_weeks": 16,
+        "key_dates": {
+          "classes_begin": "2026-01-05",
+          "internal_assessment_1": "2026-02-09 to 2026-02-14",
+          "internal_assessment_2": "2026-03-23 to 2026-03-28",
+          "last_day_of_instruction": "2026-04-17",
+          "study_holidays": "2026-04-18 to 2026-04-26",
+          "end_semester_exams_begin": "2026-04-27",
+          "end_semester_exams_end": "2026-05-18",
+          "results_declaration": "2026-06-05",
+          "summer_break_start": "2026-05-19",
+          "summer_break_end": "2026-07-31"
+        }
+      }
+    ],
+    "public_holidays_2025_26": [
+      {"date": "2025-08-15", "name": "Independence Day"},
+      {"date": "2025-08-27", "name": "Janmashtami"},
+      {"date": "2025-09-05", "name": "Teachers Day (Half Day)"},
+      {"date": "2025-10-02", "name": "Gandhi Jayanti"},
+      {"date": "2025-10-02", "name": "Mahatma Gandhi Birthday (National Holiday)"},
+      {"date": "2025-10-20", "name": "Dussehra"},
+      {"date": "2025-10-21", "name": "Dussehra Holiday"},
+      {"date": "2025-11-01", "name": "Kannada Rajyotsava"},
+      {"date": "2025-11-05", "name": "Diwali"},
+      {"date": "2025-11-14", "name": "Children's Day (Half Day)"},
+      {"date": "2025-12-25", "name": "Christmas"},
+      {"date": "2026-01-01", "name": "New Year"},
+      {"date": "2026-01-14", "name": "Makara Sankranti"},
+      {"date": "2026-01-26", "name": "Republic Day"},
+      {"date": "2026-03-17", "name": "Holi"},
+      {"date": "2026-03-30", "name": "Ugadi"},
+      {"date": "2026-04-03", "name": "Good Friday"},
+      {"date": "2026-04-14", "name": "Dr. B.R. Ambedkar Jayanti"},
+      {"date": "2026-05-01", "name": "May Day / Labour Day"}
+    ],
+    "important_events": [
+      {
+        "event": "GITS Annual Tech Fest – TECHNOVA 2026",
+        "date": "2026-02-20 to 2026-02-22",
+        "venue": "Main Campus Auditorium & Sports Ground",
+        "registration_deadline": "2026-02-10",
+        "contact": "technova@gits.edu.in"
+      },
+      {
+        "event": "GITS Cultural Fest – SANSKRITI 2026",
+        "date": "2026-03-14 to 2026-03-16",
+        "venue": "Open Air Theatre & Main Auditorium",
+        "registration_deadline": "2026-03-05",
+        "contact": "sanskriti@gits.edu.in"
+      },
+      {
+        "event": "Annual Sports Meet – VELOCITY 2026",
+        "date": "2026-01-23 to 2026-01-25",
+        "venue": "Sports Complex",
+        "contact": "sports@gits.edu.in"
+      },
+      {
+        "event": "Convocation Ceremony (2024 Batch)",
+        "date": "2025-09-20",
+        "venue": "Main Auditorium",
+        "contact": "registrar@gits.edu.in"
+      },
+      {
+        "event": "Industry-Academia Summit 2026",
+        "date": "2026-02-06",
+        "venue": "Convention Centre, Block F",
+        "contact": "research@gits.edu.in"
+      },
+      {
+        "event": "Hackathon – CodeStorm 2026",
+        "date": "2026-03-07 to 2026-03-08",
+        "venue": "CSE & IT Department Labs",
+        "contact": "codestorm@gits.edu.in"
+      },
+      {
+        "event": "National Science Day Celebration",
+        "date": "2026-02-28",
+        "venue": "Science Block",
+        "contact": "studentaffairs@gits.edu.in"
+      },
+      {
+        "event": "Alumni Homecoming Day",
+        "date": "2025-10-04",
+        "venue": "Main Campus",
+        "contact": "alumni@gits.edu.in"
+      }
+    ],
+    "registration_deadlines": {
+      "course_registration_odd_sem": "2025-08-10",
+      "course_registration_even_sem": "2026-01-12",
+      "add_drop_deadline_odd": "2025-08-20",
+      "add_drop_deadline_even": "2026-01-22",
+      "exam_form_submission_odd": "2025-11-10",
+      "exam_form_submission_even": "2026-04-06",
+      "backlog_exam_registration": "As announced by Exam Cell"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "departments": [
+    {
+      "id": "CSE",
+      "name": "Computer Science and Engineering",
+      "hod": "Dr. Priya Nair",
+      "hod_email": "hod.cse@gits.edu.in",
+      "hod_phone": "+91-80-1234-5701",
+      "office_room": "Block A, Room 101",
+      "programs_offered": ["B.E. CSE", "B.E. CSE (AI & ML)", "B.E. CSE (Data Science)", "M.E. CSE", "Ph.D. CSE"],
+      "intake": {"BE_CSE": 120, "BE_CSE_AIML": 60, "BE_CSE_DS": 60, "ME_CSE": 24},
+      "faculty_count": 38,
+      "labs": ["Programming Lab", "Networks Lab", "AI & ML Lab", "Cybersecurity Lab", "Cloud Computing Lab", "IoT Lab"],
+      "department_email": "cse@gits.edu.in"
+    },
+    {
+      "id": "ECE",
+      "name": "Electronics and Communication Engineering",
+      "hod": "Dr. Ramesh Kumar",
+      "hod_email": "hod.ece@gits.edu.in",
+      "hod_phone": "+91-80-1234-5702",
+      "office_room": "Block B, Room 201",
+      "programs_offered": ["B.E. ECE", "M.E. VLSI", "Ph.D. ECE"],
+      "intake": {"BE_ECE": 120, "ME_VLSI": 18},
+      "faculty_count": 32,
+      "labs": ["Electronics Lab", "Signals Lab", "Embedded Systems Lab", "Microprocessors Lab", "RF & Antenna Lab", "VLSI Design Lab"],
+      "department_email": "ece@gits.edu.in"
+    },
+    {
+      "id": "MECH",
+      "name": "Mechanical Engineering",
+      "hod": "Dr. Sunil Verma",
+      "hod_email": "hod.mech@gits.edu.in",
+      "hod_phone": "+91-80-1234-5703",
+      "office_room": "Block C, Room 301",
+      "programs_offered": ["B.E. Mechanical", "M.E. Manufacturing", "Ph.D. Mechanical"],
+      "intake": {"BE_MECH": 120, "ME_MFNG": 18},
+      "faculty_count": 28,
+      "labs": ["Workshop", "CAD/CAM Lab", "Fluid Mechanics Lab", "Thermodynamics Lab", "Materials Testing Lab"],
+      "department_email": "mech@gits.edu.in"
+    },
+    {
+      "id": "CIVIL",
+      "name": "Civil Engineering",
+      "hod": "Dr. Anjali Sharma",
+      "hod_email": "hod.civil@gits.edu.in",
+      "hod_phone": "+91-80-1234-5704",
+      "office_room": "Block D, Room 401",
+      "programs_offered": ["B.E. Civil", "M.E. Structural Engineering", "Ph.D. Civil"],
+      "intake": {"BE_CIVIL": 60, "ME_STRUCT": 18},
+      "faculty_count": 22,
+      "labs": ["Concrete Lab", "Soil Mechanics Lab", "Surveying Lab", "Environmental Engineering Lab"],
+      "department_email": "civil@gits.edu.in"
+    },
+    {
+      "id": "EEE",
+      "name": "Electrical and Electronics Engineering",
+      "hod": "Dr. Mohan Rao",
+      "hod_email": "hod.eee@gits.edu.in",
+      "hod_phone": "+91-80-1234-5705",
+      "office_room": "Block B, Room 210",
+      "programs_offered": ["B.E. EEE", "M.E. Power Electronics", "Ph.D. EEE"],
+      "intake": {"BE_EEE": 60, "ME_PE": 18},
+      "faculty_count": 24,
+      "labs": ["Electrical Machines Lab", "Power Systems Lab", "Control Systems Lab", "Drives Lab"],
+      "department_email": "eee@gits.edu.in"
+    },
+    {
+      "id": "IT",
+      "name": "Information Technology",
+      "hod": "Dr. Kavitha Reddy",
+      "hod_email": "hod.it@gits.edu.in",
+      "hod_phone": "+91-80-1234-5706",
+      "office_room": "Block A, Room 110",
+      "programs_offered": ["B.E. IT", "M.Tech IT"],
+      "intake": {"BE_IT": 60, "MTech_IT": 18},
+      "faculty_count": 20,
+      "labs": ["Web Development Lab", "Database Lab", "Software Testing Lab", "Security Lab"],
+      "department_email": "it@gits.edu.in"
+    },
+    {
+      "id": "MBA",
+      "name": "Master of Business Administration",
+      "hod": "Dr. Sanjay Patel",
+      "hod_email": "hod.mba@gits.edu.in",
+      "hod_phone": "+91-80-1234-5707",
+      "office_room": "Management Block, Room 501",
+      "programs_offered": ["MBA (Marketing)", "MBA (Finance)", "MBA (HR)", "MBA (Operations)"],
+      "intake": {"MBA": 120},
+      "faculty_count": 18,
+      "labs": ["Business Analytics Lab", "Finance Lab", "Entrepreneurship Centre"],
+      "department_email": "mba@gits.edu.in"
+    },
+    {
+      "id": "AIML",
+      "name": "Artificial Intelligence and Machine Learning",
+      "hod": "Dr. Deepa Menon",
+      "hod_email": "hod.aiml@gits.edu.in",
+      "hod_phone": "+91-80-1234-5708",
+      "office_room": "Block A, Room 120",
+      "programs_offered": ["B.E. AI & ML", "M.Tech AI & ML"],
+      "intake": {"BE_AIML": 60, "MTech_AIML": 18},
+      "faculty_count": 15,
+      "labs": ["Deep Learning Lab", "NLP Lab", "Computer Vision Lab", "Robotics Lab"],
+      "department_email": "aiml@gits.edu.in"
+    }
+  ],
+  "central_departments": [
+    {
+      "name": "Training and Placement Cell (TPC)",
+      "head": "Dr. Vijay Krishnaswamy",
+      "email": "placement@gits.edu.in",
+      "phone": "+91-80-1234-5720",
+      "location": "Main Block, Ground Floor"
+    },
+    {
+      "name": "Examination Cell",
+      "head": "Mr. Raghavan Iyer",
+      "email": "exam@gits.edu.in",
+      "phone": "+91-80-1234-5721",
+      "location": "Admin Block, Room 15"
+    },
+    {
+      "name": "Admissions Office",
+      "head": "Ms. Chitra Balan",
+      "email": "admissions@gits.edu.in",
+      "phone": "+91-80-1234-5722",
+      "location": "Main Block, Room 5"
+    },
+    {
+      "name": "Finance and Accounts",
+      "head": "Mr. Suresh Nambiar",
+      "email": "finance@gits.edu.in",
+      "phone": "+91-80-1234-5723",
+      "location": "Admin Block, Room 20"
+    },
+    {
+      "name": "Library",
+      "head": "Ms. Padmavathi Krishnan",
+      "email": "library@gits.edu.in",
+      "phone": "+91-80-1234-5724",
+      "location": "Central Library Building"
+    },
+    {
+      "name": "Student Affairs & Welfare",
+      "head": "Dr. Meena Chandrasekhar",
+      "email": "studentaffairs@gits.edu.in",
+      "phone": "+91-80-1234-5725",
+      "location": "Main Block, Room 10"
+    },
+    {
+      "name": "International Relations Office",
+      "head": "Dr. Ananya Ghosh",
+      "email": "international@gits.edu.in",
+      "phone": "+91-80-1234-5726",
+      "location": "Admin Block, Room 30"
+    }
+  ]
+}

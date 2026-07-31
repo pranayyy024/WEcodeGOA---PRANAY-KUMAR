@@ -1,0 +1,301 @@
+{
+  "forms_and_applications": {
+    "categories": [
+      {
+        "category": "Academic",
+        "forms": [
+          {
+            "form_id": "ACAD-001",
+            "name": "Course Registration Form",
+            "purpose": "To register for subjects each semester",
+            "where_to_get": "ERP Portal: https://erp.gits.edu.in/course-registration",
+            "submission_to": "Academic Section / ERP (Online)",
+            "deadline": "Within first 10 days of each semester",
+            "documents_required": [],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "ACAD-002",
+            "name": "Course Add / Drop Form",
+            "purpose": "To add or drop a subject after initial registration",
+            "where_to_get": "Academic Section or ERP Portal",
+            "submission_to": "HOD with Class Teacher signature",
+            "deadline": "Within 20 days of semester start",
+            "documents_required": ["Written justification"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "ACAD-003",
+            "name": "Exam Hall Ticket Request",
+            "purpose": "Application for end-semester exam hall ticket",
+            "where_to_get": "Exam Cell / ERP Portal",
+            "submission_to": "Exam Cell",
+            "deadline": "6 weeks before exam",
+            "documents_required": ["Fee payment proof", "No-dues clearance", "Attendance certificate"],
+            "fee": "Nil (exam fee already included in semester fees)"
+          },
+          {
+            "form_id": "ACAD-004",
+            "name": "Revaluation / Recounting Request Form",
+            "purpose": "To request revaluation or recounting of answer scripts",
+            "where_to_get": "Exam Cell after results",
+            "submission_to": "Exam Cell",
+            "deadline": "Within 15 days of result declaration",
+            "documents_required": ["Original marks card / provisional statement", "Fee receipt"],
+            "fee": "INR 750 per subject for revaluation; INR 300 for recounting"
+          },
+          {
+            "form_id": "ACAD-005",
+            "name": "Duplicate Marks Card / Transcript",
+            "purpose": "To get duplicate marks card or official transcript",
+            "where_to_get": "Registrar's Office",
+            "submission_to": "Registrar's Office",
+            "deadline": "Anytime (3-5 working days processing)",
+            "documents_required": ["ID proof", "FIR copy (if original lost)", "Affidavit"],
+            "fee": "INR 250 per copy (transcript: INR 500 per copy)"
+          },
+          {
+            "form_id": "ACAD-006",
+            "name": "Attestation of Documents",
+            "purpose": "For college to attest academic documents",
+            "where_to_get": "Academic Section",
+            "submission_to": "Academic Section",
+            "deadline": "Anytime (2 working days)",
+            "documents_required": ["Original + photocopy of document to be attested", "ID card"],
+            "fee": "INR 50 per document"
+          },
+          {
+            "form_id": "ACAD-007",
+            "name": "No Objection Certificate (NOC)",
+            "purpose": "Required for internship, higher education, transfer, foreign university applications",
+            "where_to_get": "HOD / Academic Section",
+            "submission_to": "HOD → Principal for signature",
+            "deadline": "Apply 7 days before required date",
+            "documents_required": ["Request letter (reason)", "Offer letter from internship/university if applicable"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "ACAD-008",
+            "name": "Bonafide Certificate",
+            "purpose": "To certify student is currently enrolled (required for bank loan, visa, passport, scholarships)",
+            "where_to_get": "Academic Section / ERP Portal (instant PDF)",
+            "submission_to": "NA (issued by college)",
+            "deadline": "Anytime – same day if applied online",
+            "fee": "Nil"
+          },
+          {
+            "form_id": "ACAD-009",
+            "name": "Migration Certificate Request",
+            "purpose": "For students transferring to another university/institution",
+            "where_to_get": "Registrar's Office",
+            "submission_to": "Registrar",
+            "deadline": "Before joining new institution",
+            "documents_required": ["Admission proof from new institution", "No-dues from all departments"],
+            "fee": "INR 1000"
+          },
+          {
+            "form_id": "ACAD-010",
+            "name": "Attendance Shortage Condonation Form",
+            "purpose": "To apply for attendance condonation due to medical/valid reasons",
+            "where_to_get": "HOD Office",
+            "submission_to": "HOD → Dean Academic",
+            "documents_required": ["Medical certificate (MBBS doctor)", "Parent signature", "Valid reason"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "ACAD-011",
+            "name": "Lateral Entry Admission Form",
+            "purpose": "For diploma holders seeking direct 2nd year admission",
+            "where_to_get": "Admissions Office",
+            "submission_to": "Admissions Office",
+            "documents_required": ["Diploma certificate", "12th marks card (if applicable)", "CET / DCET rank card", "Transfer certificate", "Conduct certificate"],
+            "fee": "INR 500 application processing fee"
+          }
+        ]
+      },
+      {
+        "category": "Finance",
+        "forms": [
+          {
+            "form_id": "FIN-001",
+            "name": "Scholarship Application Form",
+            "purpose": "To apply for merit or government scholarships",
+            "where_to_get": "Student Affairs Office / NSP Portal",
+            "submission_to": "Student Affairs Office",
+            "deadline": "As announced (typically September–October)",
+            "documents_required": ["Income certificate", "Caste certificate (if applicable)", "Previous year marks card", "Bank passbook copy (student's account)", "Aadhaar card"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "FIN-002",
+            "name": "Fee Installment Request",
+            "purpose": "To request splitting of fees into installments",
+            "where_to_get": "Finance Office",
+            "submission_to": "Finance Office → Principal for approval",
+            "deadline": "Before fee due date",
+            "documents_required": ["Parent request letter", "Income proof"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "FIN-003",
+            "name": "Caution Deposit Refund Form",
+            "purpose": "To claim back caution deposit after course completion",
+            "where_to_get": "Finance Office",
+            "submission_to": "Finance Office",
+            "deadline": "Within 6 months of graduation",
+            "documents_required": ["Original caution deposit receipt", "No-dues certificate from all departments", "Bank account details for NEFT transfer"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "FIN-004",
+            "name": "Education Loan Assistance Letter Request",
+            "purpose": "College letter to support bank education loan application",
+            "where_to_get": "Finance Office",
+            "submission_to": "Finance Office",
+            "deadline": "Anytime",
+            "documents_required": ["Bank loan application form", "Fee structure copy"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "FIN-005",
+            "name": "Fee Receipt Duplicate Request",
+            "purpose": "To get duplicate copy of fee payment receipt",
+            "where_to_get": "Finance Office / ERP Portal",
+            "submission_to": "Finance Office",
+            "deadline": "Anytime",
+            "fee": "INR 50"
+          }
+        ]
+      },
+      {
+        "category": "Hostel",
+        "forms": [
+          {
+            "form_id": "HST-001",
+            "name": "Hostel Admission Form",
+            "purpose": "Fresh hostel allotment request",
+            "where_to_get": "Hostel Office / ERP Portal",
+            "submission_to": "Chief Warden",
+            "deadline": "Before semester start (June 30 for Odd Sem)",
+            "documents_required": ["Medical fitness certificate", "Parent consent form", "Aadhaar copy"],
+            "fee": "Refer to hostel fees structure"
+          },
+          {
+            "form_id": "HST-002",
+            "name": "Hostel Room Change Request",
+            "purpose": "To request a room change within the hostel",
+            "where_to_get": "Hostel Office",
+            "submission_to": "Block Warden → Chief Warden",
+            "deadline": "Within first 3 weeks of semester",
+            "documents_required": ["Written reason", "Current roommate consent (if applicable)"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "HST-003",
+            "name": "Hostel Leave Pass / Outing Pass",
+            "purpose": "To take permission to leave hostel campus temporarily",
+            "where_to_get": "Block Warden (physical form) / ERP Portal",
+            "submission_to": "Block Warden",
+            "deadline": "At least 2 hours before intended departure",
+            "documents_required": ["Parent/Guardian approval (can be via portal or signed slip)"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "HST-004",
+            "name": "Hostel Vacation Request",
+            "purpose": "To vacate hostel at end of academic year or mid-year",
+            "where_to_get": "Hostel Office",
+            "submission_to": "Chief Warden",
+            "deadline": "7 days prior to vacation date",
+            "documents_required": ["No-dues from hostel mess", "Room key handover"],
+            "fee": "Nil (refund of deposit as per policy)"
+          }
+        ]
+      },
+      {
+        "category": "Placement and Internship",
+        "forms": [
+          {
+            "form_id": "TPO-001",
+            "name": "Placement Registration Form",
+            "purpose": "To register for campus placement drives",
+            "where_to_get": "TPC Office / Placement Portal: https://placement.gits.edu.in",
+            "submission_to": "Placement Cell",
+            "deadline": "Before each company drive deadline",
+            "documents_required": ["Updated resume", "10th and 12th marks cards", "Consolidated marks card", "Recent passport photo"],
+            "eligibility": "CGPA >= 6.0 (varies by company); No active backlog",
+            "fee": "Nil"
+          },
+          {
+            "form_id": "TPO-002",
+            "name": "Internship NOC and Permission Form",
+            "purpose": "For internships during semester / summer break",
+            "where_to_get": "TPC / Department",
+            "submission_to": "HOD → TPC",
+            "documents_required": ["Internship offer letter", "Company details", "Duration and schedule"],
+            "fee": "Nil"
+          },
+          {
+            "form_id": "TPO-003",
+            "name": "Internship Completion Certificate Submission",
+            "purpose": "To submit internship completion for credit / academic record",
+            "where_to_get": "Department",
+            "submission_to": "Class Teacher → HOD",
+            "deadline": "Within 2 weeks of internship completion",
+            "documents_required": ["Completion certificate from company", "Internship report", "Mentor evaluation (if applicable)"],
+            "fee": "Nil"
+          }
+        ]
+      },
+      {
+        "category": "General / Miscellaneous",
+        "forms": [
+          {
+            "form_id": "GEN-001",
+            "name": "Student Grievance Form",
+            "purpose": "To file a formal complaint or grievance",
+            "where_to_get": "Student Affairs Office / Online: https://www.gits.edu.in/grievance",
+            "submission_to": "Student Grievance Redressal Committee",
+            "deadline": "Within 30 days of the incident",
+            "fee": "Nil"
+          },
+          {
+            "form_id": "GEN-002",
+            "name": "Library Membership / Lost Book Declaration",
+            "purpose": "Register for library membership or declare lost book",
+            "where_to_get": "Library Counter",
+            "submission_to": "Librarian",
+            "fee": "Lost book: INR 2× cost of book"
+          },
+          {
+            "form_id": "GEN-003",
+            "name": "Sports / Event Participation Permission",
+            "purpose": "To participate in inter-college or university level competitions",
+            "where_to_get": "Student Affairs / Sports Office",
+            "submission_to": "Sports Director → Dean Student Affairs",
+            "documents_required": ["Invitation letter from organizing institution", "HOD recommendation"],
+            "fee": "Nil (college may sponsor travel for selected events)"
+          },
+          {
+            "form_id": "GEN-004",
+            "name": "Identity Card Re-issue Form",
+            "purpose": "To get a duplicate ID card if lost or damaged",
+            "where_to_get": "Student Affairs Office",
+            "submission_to": "Student Affairs Office",
+            "documents_required": ["FIR copy (if lost)", "Passport photo (1 copy)"],
+            "fee": "INR 150"
+          },
+          {
+            "form_id": "GEN-005",
+            "name": "Feedback / Suggestion Form",
+            "purpose": "To submit feedback on teaching, facilities, or administration",
+            "where_to_get": "Online: https://erp.gits.edu.in/feedback (Anonymous)",
+            "submission_to": "IQAC Cell",
+            "deadline": "End of each semester",
+            "fee": "Nil"
+          }
+        ]
+      }
+    ]
+  }
+}

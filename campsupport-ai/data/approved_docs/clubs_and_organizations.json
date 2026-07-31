@@ -1,0 +1,133 @@
+{
+  "clubs_and_organizations": [
+    {
+      "id": "CLUB-001",
+      "name": "GITS Coding Club",
+      "type": "Technical",
+      "faculty_advisor": "Prof. Srikanth Rao",
+      "email": "codingclub@gits.edu.in",
+      "meeting_schedule": "Every Wednesday, 5:00 PM – 7:00 PM, Programming Lab 1",
+      "activities": ["Weekly coding challenges", "Competitive programming practice", "Hackathon prep", "Leetcode contests", "Guest lectures by industry engineers"],
+      "how_to_join": "Register via ERP portal; no tryout required",
+      "annual_event": "CodeStorm Hackathon (March)"
+    },
+    {
+      "id": "CLUB-002",
+      "name": "IEEE Student Branch – GITS",
+      "type": "Technical / Professional",
+      "faculty_advisor": "Dr. Ramesh Kumar (ECE)",
+      "email": "ieee@gits.edu.in",
+      "membership_fee": "INR 1,500/year (IEEE International + GITS chapter)",
+      "activities": ["IEEE conferences participation", "Technical workshops", "Webinars with IEEE experts", "Paper presentations"],
+      "how_to_join": "Apply at ieee.org/membership + register with branch advisor"
+    },
+    {
+      "id": "CLUB-003",
+      "name": "AI & Robotics Club",
+      "type": "Technical",
+      "faculty_advisor": "Dr. Deepa Menon",
+      "email": "airoboticsclub@gits.edu.in",
+      "meeting_schedule": "Fridays, 4:00 PM – 6:00 PM, Robotics Lab",
+      "activities": ["Robot building workshops", "AI model deployment projects", "Participation in RoboWars and Smart India Hackathon"],
+      "annual_event": "RoboFest (November)"
+    },
+    {
+      "id": "CLUB-004",
+      "name": "Entrepreneurship Cell (E-Cell)",
+      "type": "Entrepreneurship",
+      "faculty_advisor": "Dr. Sanjay Patel (MBA)",
+      "email": "ecell@gits.edu.in",
+      "activities": ["Startup bootcamps", "Investor meet and pitching sessions", "Mentorship from alumni entrepreneurs", "Annual B-plan competition"],
+      "incubation_centre": "GITS Innovation Hub – Block F, Room 502",
+      "annual_event": "E-Summit (February)"
+    },
+    {
+      "id": "CLUB-005",
+      "name": "Nature and Environment Club (GREEN GITS)",
+      "type": "Social / Environmental",
+      "faculty_advisor": "Dr. Anjali Sharma (Civil)",
+      "email": "greengits@gits.edu.in",
+      "activities": ["Tree planting drives", "Cleanliness campaigns", "Sustainability awareness events", "Paper recycling"],
+      "annual_event": "Green Fest (June 5 – World Environment Day)"
+    },
+    {
+      "id": "CLUB-006",
+      "name": "GITS Cultural Club – TARANG",
+      "type": "Cultural",
+      "faculty_advisor": "Dr. Suma Krishnan",
+      "email": "tarang@gits.edu.in",
+      "activities": ["Dance (classical and western)", "Music (vocal and instrumental)", "Drama and street plays", "Fine arts"],
+      "annual_event": "SANSKRITI Cultural Fest (March)"
+    },
+    {
+      "id": "CLUB-007",
+      "name": "Photography and Media Club",
+      "type": "Creative",
+      "faculty_advisor": "Prof. Karthik Balaji",
+      "email": "mediaclub@gits.edu.in",
+      "activities": ["Campus photography", "Short film making", "Video editing workshops", "GITS YouTube content creation"],
+      "meeting_schedule": "Thursdays, 5:00 PM"
+    },
+    {
+      "id": "CLUB-008",
+      "name": "NSS (National Service Scheme)",
+      "type": "Social Service",
+      "programme_officer": "Dr. Meena Chandrasekhar",
+      "email": "nss@gits.edu.in",
+      "activities": ["Blood donation camps", "Village adoption and rural awareness", "Special camps (7-day annual)", "Swachh Bharat activities"],
+      "certificate": "NSS certificate issued after 240 hours of service; valuable for postgraduate admissions",
+      "how_to_join": "Register at Student Affairs Office at semester start"
+    },
+    {
+      "id": "CLUB-009",
+      "name": "NCC (National Cadet Corps)",
+      "type": "Defence / Social",
+      "anu": "Karnataka and Kerala Directorate",
+      "contact": "Lt. Anand Kumar Tiwari",
+      "email": "ncc@gits.edu.in",
+      "units_available": ["Army Wing", "Air Wing"],
+      "activities": ["Drill and parade training", "Adventure activities (trekking, shooting)", "Republic Day camp", "Disaster management"],
+      "certificate": "B and C certificates recognized for government job and PG admissions"
+    },
+    {
+      "id": "CLUB-010",
+      "name": "Literary Club – QUILL",
+      "type": "Literary",
+      "faculty_advisor": "Ms. Deepthi Nair",
+      "email": "literaryclub@gits.edu.in",
+      "activities": ["Creative writing", "Debate competitions", "Quiz", "Model UN (MUN)", "Book club discussions"],
+      "annual_event": "LitFest – Ink & Ideas (October)"
+    },
+    {
+      "id": "CLUB-011",
+      "name": "Sports Club",
+      "type": "Sports",
+      "sports_director": "Mr. Arun Menon",
+      "email": "sports@gits.edu.in",
+      "activities": ["Inter-department sports league", "Coaching for inter-collegiate competitions", "Sports day organization", "Annual marathon"],
+      "annual_event": "VELOCITY Sports Meet (January)"
+    },
+    {
+      "id": "CLUB-012",
+      "name": "GITS Toastmasters Club",
+      "type": "Communication / Leadership",
+      "faculty_advisor": "Dr. Anitha Rajan",
+      "email": "toastmasters@gits.edu.in",
+      "meeting_schedule": "Every alternate Saturday, 10:00 AM – 12:00 PM",
+      "activities": ["Public speaking practice", "Table topics", "Prepared speeches", "Leadership roles"]
+    }
+  ],
+  "student_government": {
+    "name": "GITS Student Council",
+    "structure": [
+      {"position": "Student Council President", "current": "Ananya Rajan (CSE, 2022 Batch)"},
+      {"position": "Vice President", "current": "Rohit Sharma (ECE, 2022 Batch)"},
+      {"position": "General Secretary", "current": "Pooja Menon (IT, 2022 Batch)"},
+      {"position": "Treasurer", "current": "Arvind Krishnaswamy (MECH, 2023 Batch)"},
+      {"position": "Cultural Secretary", "current": "Sneha Iyer (CSE-AIML, 2022 Batch)"},
+      {"position": "Sports Secretary", "current": "Kiran Raj (EEE, 2022 Batch)"}
+    ],
+    "elections": "Held every August; all full-time students are eligible to vote and stand",
+    "council_email": "studentcouncil@gits.edu.in"
+  }
+}
