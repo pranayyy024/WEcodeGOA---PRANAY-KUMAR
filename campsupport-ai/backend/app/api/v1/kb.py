@@ -89,13 +89,29 @@ _MULTI_COLLEGE_KB: Dict[str, List[Dict[str, Any]]] = {
 }
 
 
+from app.db.kb_db import get_all_kb_documents, insert_kb_document, delete_kb_document_by_id, DOCS_DIR
+from app.llamaindex.retriever import reload_rag_retriever
+
+
 @router.get("/documents", response_model=List[KBDocumentResponse])
 async def list_kb_documents(
     college_id: str = Query("GEC", description="College tenant identifier")
 ) -> List[KBDocumentResponse]:
-    """Returns all approved policy documents indexed for a specific college."""
-    docs = _MULTI_COLLEGE_KB.get(college_id, [])
-    return [KBDocumentResponse(**d) for d in docs]
+    """Returns all approved policy documents indexed in SQLite for a specific college."""
+    docs = get_all_kb_documents(college_id)
+    return [
+        KBDocumentResponse(
+            id=d["id"],
+            name=d["name"],
+            college_id=d["college_id"],
+            department=d["department"],
+            size=d["size"],
+            chunks=int(d["chunks"]),
+            last_updated=d["last_updated"],
+            status=d["status"]
+        )
+        for d in docs
+    ]
 
 
 @router.post("/upload", response_model=KBDocumentResponse, status_code=status.HTTP_201_CREATED)
@@ -103,8 +119,9 @@ async def upload_kb_document(
     file: UploadFile = File(...),
     college_id: str = Form("GEC"),
     department: str = Form("Campus IT"),
+    category: str = Form("Technical"),
 ) -> KBDocumentResponse:
-    """Uploads a new policy document (.txt/.md) to the specified college KB and re-indexes LlamaIndex."""
+    """Uploads a new policy document (.txt/.md/.json) to disk, saves metadata in SQLite, and re-indexes AI RAG retriever."""
     if not file.filename:
         raise HTTPException(status_code=400, detail="Filename cannot be empty")
 
@@ -112,21 +129,32 @@ async def upload_kb_document(
     size_kb = max(1.0, round(len(content) / 1024, 1))
     chunk_count = max(4, len(content) // 250)
 
-    doc_id = f"{college_id.lower()}-doc-{int(datetime.now(timezone.utc).timestamp())}"
+    # 1. Save physical file to data/approved_docs/
+    os.makedirs(DOCS_DIR, exist_ok=True)
+    target_path = os.path.join(DOCS_DIR, file.filename)
+    with open(target_path, "wb") as f:
+        f.write(content)
+
+    # 2. Save metadata in admins.db
+    doc_id = f"gec-doc-{int(datetime.now(timezone.utc).timestamp())}"
     new_doc = {
         "id": doc_id,
         "name": file.filename,
         "college_id": college_id,
         "department": department,
+        "category": category,
         "size": f"{size_kb} KB",
         "chunks": chunk_count,
-        "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d (Uploaded by Staff)"),
+        "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d (Uploaded by Admin)"),
         "status": "INDEXED",
     }
+    insert_kb_document(new_doc)
 
-    if college_id not in _MULTI_COLLEGE_KB:
-        _MULTI_COLLEGE_KB[college_id] = []
-    _MULTI_COLLEGE_KB[college_id].append(new_doc)
+    # 3. Trigger automatic AI Chatbot RAG Re-indexing!
+    try:
+        reload_rag_retriever()
+    except Exception as e:
+        print(f"Warning: RAG re-indexing error: {e}")
 
     return KBDocumentResponse(**new_doc)
 
@@ -136,15 +164,25 @@ async def delete_kb_document(
     doc_id: str,
     college_id: str = Query("GEC")
 ) -> Dict[str, str]:
-    """Deletes a policy document from the college Knowledge Base."""
-    if college_id not in _MULTI_COLLEGE_KB:
-        raise HTTPException(status_code=404, detail=f"College KB {college_id} not found")
-
-    docs = _MULTI_COLLEGE_KB[college_id]
-    original_len = len(docs)
-    _MULTI_COLLEGE_KB[college_id] = [d for d in docs if d["id"] != doc_id]
-
-    if len(_MULTI_COLLEGE_KB[college_id]) == original_len:
+    """Deletes a policy document from the college Knowledge Base SQLite database and re-indexes AI RAG."""
+    deleted = delete_kb_document_by_id(doc_id, college_id)
+    if not deleted:
         raise HTTPException(status_code=404, detail=f"Document {doc_id} not found in {college_id}")
+
+    # Remove physical file if it exists in DOCS_DIR
+    fname = deleted.get("name", "")
+    if fname:
+        fpath = os.path.join(DOCS_DIR, fname)
+        if os.path.exists(fpath):
+            try:
+                os.remove(fpath)
+            except Exception:
+                pass
+
+    # Trigger automatic AI Chatbot RAG Re-indexing!
+    try:
+        reload_rag_retriever()
+    except Exception as e:
+        print(f"Warning: RAG re-indexing error on delete: {e}")
 
     return {"message": f"Successfully deleted document {doc_id} from {college_id} Knowledge Base"}

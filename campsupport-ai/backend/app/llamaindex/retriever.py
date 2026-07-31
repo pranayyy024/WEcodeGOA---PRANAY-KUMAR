@@ -117,7 +117,7 @@ class CampusRAGRetriever:
         citations = [
             CitationSchema(
                 source_document=source,
-                snippet=snippet[:300] + ("..." if len(snippet) > 300 else ""),
+                snippet=snippet[:1800] + ("..." if len(snippet) > 1800 else ""),
                 relevance_score=round(score, 2)
             )
             for score, source, snippet in top_chunks
@@ -125,10 +125,20 @@ class CampusRAGRetriever:
         max_score = round(top_chunks[0][0], 2)
         return citations, max_score
 
+    def reload_documents(self):
+        """Reloads all documents from the docs directory into memory and resets semantic index."""
+        self._documents = self._load_documents()
+        self._semantic_provider = SemanticSearchProvider()
+
 
 # Singleton RAG retriever instance
 _rag_retriever_instance = CampusRAGRetriever()
 
 
 def get_rag_retriever() -> CampusRAGRetriever:
+    return _rag_retriever_instance
+
+
+def reload_rag_retriever() -> CampusRAGRetriever:
+    _rag_retriever_instance.reload_documents()
     return _rag_retriever_instance

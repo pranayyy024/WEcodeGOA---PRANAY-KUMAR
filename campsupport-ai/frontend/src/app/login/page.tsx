@@ -1,10 +1,18 @@
-import React from 'react';
-import { LoginPage } from '../../components/LoginPage';
+'use client';
 
-export default function LoginRoute() {
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function LoginPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/');
+  }, [router]);
+
   return (
-    <main aria-label="Campus Multi-Role Authentication Portal" className="w-full">
-      <LoginPage />
-    </main>
+    <div className="min-h-screen bg-[#FAFAFC] flex items-center justify-center text-[#6B7280] text-sm">
+      Redirecting to role selection...
+    </div>
   );
 }
